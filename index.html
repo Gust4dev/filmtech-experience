@@ -9,54 +9,1013 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* CRITICAL CSS - PRELOADER */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #050505; /* Matches global bg color */
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
-        }
-        #preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-        .spinner {
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            border-top-color: #00ff88; /* Neon Green */
-            animation: spin 1s ease-in-out infinite;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+        /* CRITICAL CSS - REMOVED PRELOADER */
     </style>
+    <link rel="stylesheet" href="src/styles/global.css">
+
 </head>
 <body>
-    <!-- Preloader Element -->
-    <div id="preloader">
-        <div class="spinner"></div>
-    </div>
 
-    <load src="src/sections/hero.html" />
-    <load src="src/sections/journey.html" />
-    <load src="src/sections/transformation.html" />
-    <load src="src/sections/method.html" />
-    <load src="src/sections/pillars.html" />
-    <load src="src/sections/social-proof.html" />
-    <load src="src/sections/pricing.html" />
-    <load src="src/sections/faq.html" />
-    <load src="src/sections/final-cta.html" />
-    <load src="src/sections/footer.html" />
 
-    <script type="module" src="src/main.js"></script>
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-headline">
+                    A Estratégia Silenciosa que transformou uma estética comum em uma operação de 
+                    <span class="highlight">R$ 300k/mês.</span>
+                </h1>
+                
+                <div class="hero-badge">
+                    <span class="pulse"></span>
+                    MÉTODO VALIDADO POR +200 ALUNOS
+                </div>
+
+                <p class="hero-subheadline">
+                    Não é sobre o tamanho da sua loja, a cidade onde você mora ou o preço da sua fachada. 
+                    <strong>É sobre atingir o cliente de luxo que quer pagar caro.</strong>
+                </p>
+
+                <a href="#oferta" class="cta-button primary">
+                    <span>QUERO ACESSAR O MÉTODO FILMTECH</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Área do VSL -->
+            <div class="vsl-container">
+                <div class="vsl-placeholder">
+                    <div class="play-button">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                    </div>
+                    <span class="vsl-text">VÍDEO DE VENDAS (VSL) AQUI</span>
+                    <span class="vsl-subtext">Vídeo de 3-5 minutos explicando o método</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <span>Role para descobrir</span>
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="journey" id="jornada">
+        <div class="container">
+            <div class="journey-content centered">
+                <span class="section-tag">A MINHA HISTÓRIA</span>
+                <h2 class="journey-title">
+                    "Eu achei que o problema era a cidade..."
+                </h2>
+                
+                <div class="journey-text">
+                    <p class="journey-quote">
+                        <span class="quote-mark">"</span>
+                        Comecei em 2011, em Manaus. Mudei de cidade achando que resolveria. 
+                        <strong>Não resolveu.</strong>
+                    </p>
+                    
+                    <p>
+                        Investi tudo em fachada e estrutura. O cliente continuava pedindo desconto.
+                        Eu faturava <strong>R$ 30 mil/mês</strong>, trabalhava igual louco e não via a cor do dinheiro.
+                    </p>
+                    
+                    <p class="journey-revelation">
+                        Até que eu descobri que o nosso mercado não é feira. 
+                        <span class="neon-text">É LUXO.</span>
+                    </p>
+                </div>
+                
+                <div class="stats-row centered">
+                    <div class="stat-item">
+                        <span class="stat-number" data-val="2011" data-start="1990">2011</span>
+                        <span class="stat-label">Início da jornada</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-val="10" data-suffix="x">10x</span>
+                        <span class="stat-label">Crescimento do faturamento</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-val="200" data-prefix="+">+200</span>
+                        <span class="stat-label">Alunos formados</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="transformation" id="transformacao">
+        <div class="container">
+            <div class="visual-header">
+                <h2 class="visual-title">A Realidade Muda Quando a Estratégia Muda</h2>
+            </div>
+            
+            <div class="comparison-card wide">
+                <div class="comparison-before">
+                    <span class="comparison-label">ANTES</span>
+                    <div class="image-container before">
+                        <img src="public/optimized/FOTOANTIGA.webp" alt="Gustavo no início da jornada" loading="lazy">
+                    </div>
+                    <div class="comparison-stats">
+                        <span>R$ 30k/mês</span>
+                        <span>Trabalho exaustivo</span>
+                    </div>
+                </div>
+                <div class="comparison-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+                <div class="comparison-after">
+                    <span class="comparison-label success">DEPOIS</span>
+                    <div class="image-container after">
+                        <img src="public/optimized/FOTONOVA.HEIC.webp" alt="Gustavo hoje - Loja Premium" loading="lazy">
+                    </div>
+                    <div class="comparison-stats success">
+                        <span>R$ 300k/mês</span>
+                        <span>Operação estruturada</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="method" id="metodo">
+        <div class="container">
+            <div class="method-header">
+                <span class="section-tag">O MÉTODO</span>
+                <h2 class="method-title">
+                    A Diferença entre <span class="strike">Faturar</span> e <span class="highlight">Lucrar</span>
+                </h2>
+            </div>
+            
+            <div class="method-content">
+                <div class="method-text">
+                    <p class="method-lead">
+                        Muitos desistem porque tentam vender preço. A <strong>Filmtech Academy</strong> não ensina apenas a aplicar PPF.
+                    </p>
+                    <p class="method-emphasis">
+                        Nós ensinamos a <span class="neon-text">DOMINAR</span> o cliente que paga.
+                    </p>
+                    <p>
+                        Saímos de R$ 30k para <strong>R$ 300k/mês</strong> aplicando uma estratégia silenciosa de atração e retenção de clientes High Ticket.
+                    </p>
+                    
+                    <div class="method-highlight-box">
+                        <div class="highlight-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 12l2 2 4-4"/>
+                                <circle cx="12" cy="12" r="10"/>
+                            </svg>
+                        </div>
+                        <p>
+                            <strong>Se você não sabe vender</strong>, nós ensinamos.<br>
+                            <strong>Se você já instala mas quer refinar</strong>, nós ensinamos.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="method-visual">
+                    <div class="image-container method-image">
+                        <img src="public/optimized/ppfaplicado.JPG.webp" alt="Carro de luxo com PPF aplicado" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pillars" id="conteudo">
+        <div class="container">
+            <div class="pillars-header">
+                <span class="section-tag">O CONTEÚDO</span>
+                <h2 class="pillars-title">
+                    Os 3 Pilares que Transformam sua Estética
+                </h2>
+                <p class="pillars-subtitle">
+                    Não importa se você é iniciante ou já atua no mercado. O método funciona para todos os níveis.
+                </p>
+            </div>
+            
+            <div class="pillars-grid">
+                <!-- Pilar 1 -->
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <div class="pillar-number">01</div>
+                    <h3 class="pillar-title">Técnica Impecável</h3>
+                    <p class="pillar-description">
+                        Instalação de PPF com cortes precisos e acabamento invisível. Do básico ao avançado, você sai aplicando como profissional.
+                    </p>
+                    <ul class="pillar-list">
+                        <li>Técnicas de corte e aplicação</li>
+                        <li>Acabamento invisível</li>
+                        <li>Resolução de problemas comuns</li>
+                        <li>Materiais e ferramentas corretas</li>
+                    </ul>
+                </div>
+
+                <!-- Pilar 2 -->
+                <div class="pillar-card featured">
+                    <div class="pillar-badge">MAIS IMPORTANTE</div>
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <div class="pillar-number">02</div>
+                    <h3 class="pillar-title">Gestão de Luxo</h3>
+                    <p class="pillar-description">
+                        Como estruturar sua loja para parecer premium sem gastar milhões. A percepção de valor começa no ambiente.
+                    </p>
+                    <ul class="pillar-list">
+                        <li>Layout e ambiente premium</li>
+                        <li>Processos operacionais</li>
+                        <li>Atendimento de alto padrão</li>
+                        <li>Gestão financeira inteligente</li>
+                    </ul>
+                </div>
+
+                <!-- Pilar 3 -->
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/>
+                            <path d="M2 12h20"/>
+                        </svg>
+                    </div>
+                    <div class="pillar-number">03</div>
+                    <h3 class="pillar-title">Vendas Sniper</h3>
+                    <p class="pillar-description">
+                        A "Estratégia Silenciosa" para atrair quem paga o preço cheio. Pare de brigar por preço e comece a selecionar clientes.
+                    </p>
+                    <ul class="pillar-list">
+                        <li>Posicionamento de marca</li>
+                        <li>Atração de clientes High Ticket</li>
+                        <li>Scripts de vendas que convertem</li>
+                        <li>Marketing de luxo orgânico</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-proof" id="resultados">
+        <div class="container">
+            <div class="social-header">
+                <span class="section-tag">RESULTADOS REAIS</span>
+                <h2 class="social-title">
+                    Quem aplica o método, <span class="highlight">domina o mercado.</span>
+                </h2>
+                <p class="social-subtitle">
+                    Alunos em todo o Brasil (e no mundo) aplicando e faturando alto.
+                </p>
+            </div>
+            
+            <div class="testimonials-carousel">
+                <div class="testimonials-track">
+                    <!-- Depoimento 1 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-image-placeholder">
+                            <span>PRINT DE DEPOIMENTO / RESULTADO DO ALUNO 1</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 2 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-image-placeholder">
+                            <span>PRINT DE DEPOIMENTO / RESULTADO DO ALUNO 2</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 3 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-image-placeholder">
+                            <span>PRINT DE DEPOIMENTO / RESULTADO DO ALUNO 3</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 4 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-image-placeholder">
+                            <span>PRINT DE DEPOIMENTO / RESULTADO DO ALUNO 4</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 5 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-image-placeholder">
+                            <span>PRINT DE DEPOIMENTO / RESULTADO DO ALUNO 5</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Depoimento 6 -->
+                    <div class="testimonial-card">
+                        <div class="testimonial-image-placeholder">
+                            <span>PRINT DE DEPOIMENTO / RESULTADO DO ALUNO 6</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" aria-label="Anterior">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <div class="carousel-dots"></div>
+                    <button class="carousel-btn next" aria-label="Próximo">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Stats de prova social -->
+            <div class="proof-stats">
+                <div class="proof-stat">
+                    <span class="proof-number" data-val="200" data-prefix="+">+200</span>
+                    <span class="proof-label">Alunos formados</span>
+                </div>
+                <div class="proof-stat">
+                    <span class="proof-number" data-val="15" data-suffix="+">15+</span>
+                    <span class="proof-label">Estados atendidos</span>
+                </div>
+                <div class="proof-stat">
+                    <span class="proof-number" data-val="5">5</span>
+                    <span class="proof-label">Países com alunos</span>
+                </div>
+                <div class="proof-stat">
+                    <span class="proof-number" data-val="98" data-suffix="%">98%</span>
+                    <span class="proof-label">Taxa de satisfação</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="oferta">
+        <div class="container">
+            <div class="pricing-header">
+                <span class="section-tag">INVESTIMENTO</span>
+                <h2 class="pricing-title">
+                    Escolha como você quer começar sua <span class="highlight">nova fase.</span>
+                </h2>
+                <p class="pricing-subtitle">
+                    Três formas de acessar o método. Escolha a que faz mais sentido para o seu momento.
+                </p>
+            </div>
+            
+            <div class="pricing-grid">
+                <!-- Plano Online -->
+                <div class="pricing-card">
+                    <div class="pricing-tier">ENTRADA</div>
+                    <h3 class="pricing-name">Online</h3>
+                    <p class="pricing-tagline">O método completo gravado para você assistir no seu ritmo.</p>
+                    
+                    <div class="pricing-price">
+                        <span class="price-original">De R$ 1.997</span>
+                        <div class="price-current">
+                            <span class="price-installment">12x de</span>
+                            <span class="price-value">R$ 99</span>
+                        </div>
+                        <span class="price-full">ou R$ 997 à vista</span>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Acesso vitalício ao curso
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Módulos de Técnica + Gestão + Vendas
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Grupo exclusivo de alunos
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Certificado de conclusão
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Atualizações gratuitas
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="pricing-cta" data-checkout="online">
+                        COMPRAR AGORA
+                    </a>
+                    <span class="pricing-guarantee">7 dias de garantia incondicional</span>
+                </div>
+
+                <!-- Plano Presencial -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">MAIS POPULAR</div>
+                    <div class="pricing-tier">IMERSÃO</div>
+                    <h3 class="pricing-name">Presencial</h3>
+                    <p class="pricing-tagline">3 dias intensivos na sede Filmtech. Teoria e prática lado a lado.</p>
+                    
+                    <div class="pricing-price">
+                        <span class="price-original">De R$ 5.000</span>
+                        <div class="price-current">
+                            <span class="price-installment">12x de</span>
+                            <span class="price-value">R$ 333</span>
+                        </div>
+                        <span class="price-full">ou R$ 3.497 à vista</span>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Tudo do plano Online
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            3 dias de imersão presencial
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Prática em carros reais
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Networking com outros profissionais
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Kit de ferramentas exclusivo
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Coffee break incluso
+                        </li>
+                    </ul>
+                    
+                    <a href="#" class="pricing-cta featured" data-checkout="presencial">
+                        COMPRAR AGORA
+                    </a>
+                    <span class="pricing-guarantee">7 dias de garantia incondicional</span>
+                </div>
+
+                <!-- Plano Mentoria -->
+                <div class="pricing-card elite">
+                    <div class="pricing-tier">ELITE</div>
+                    <h3 class="pricing-name">Mentoria</h3>
+                    <p class="pricing-tagline">Acompanhamento direto e personalizado com Gustavo.</p>
+                    
+                    <div class="pricing-price">
+                        <span class="price-consult">Valor sob consulta</span>
+                        <div class="price-current">
+                            <span class="price-application">Aplicação</span>
+                            <span class="price-value">Exclusiva</span>
+                        </div>
+                        <span class="price-full">Vagas limitadas por trimestre</span>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Tudo do plano Presencial
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Calls semanais individuais
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Acesso direto ao WhatsApp de Gustavo
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Análise da sua operação
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Plano de ação personalizado
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Acompanhamento por 6 meses
+                        </li>
+                    </ul>
+                    
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Mentoria%20Filmtech." class="pricing-cta elite" target="_blank">
+                        APLICAR PARA MENTORIA
+                    </a>
+                    <span class="pricing-guarantee">Processo seletivo obrigatório</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="faq-grid">
+                <!-- FAQ Grid (Flattened for Grid Layout) -->
+                <div class="guarantee-box">
+                    <div class="guarantee-badge">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            <path d="M9 12l2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="guarantee-title">Risco Zero</h3>
+                    <p class="guarantee-text">
+                        <strong>7 dias de garantia incondicional.</strong><br>
+                        Se por qualquer motivo você não gostar do conteúdo, basta solicitar o reembolso em até 7 dias e devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.
+                    </p>
+                </div>
+                
+                <h3 class="faq-title">Perguntas Frequentes</h3>
+                
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>O curso serve para iniciantes?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim! O curso foi estruturado para atender tanto iniciantes que nunca aplicaram PPF quanto profissionais que já atuam no mercado e querem refinar técnicas e aprender a vender para o público de luxo.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Por quanto tempo tenho acesso?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>O acesso ao curso online é vitalício. Você pode assistir quantas vezes quiser, para sempre, incluindo todas as atualizações futuras que fizermos no conteúdo.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Tem certificado?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim, ao concluir o curso você recebe um certificado digital de conclusão da Filmtech Academy, que pode ser usado para comprovar sua qualificação no mercado.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Quando começa o presencial?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>As turmas presenciais acontecem mensalmente na nossa sede. Ao realizar sua inscrição, nossa equipe entrará em contato para agendar a data mais adequada para você. As vagas são limitadas por turma.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Posso parcelar?</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 5v14M5 12h14"/>
+                            </svg>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Sim! Você pode parcelar em até 12x no cartão de crédito. Também aceitamos PIX e boleto para pagamento à vista com desconto especial.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta">
+        <div class="container">
+            <h2 class="final-title">
+                Pronto para parar de competir por preço e começar a <span class="highlight">dominar</span>?
+            </h2>
+            <p class="final-subtitle">
+                A decisão que você tomar agora define se você vai continuar onde está ou vai para o próximo nível.
+            </p>
+            <a href="#oferta" class="cta-button primary large">
+                <span>QUERO O MÉTODO FILMTECH</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="public/optimized/filmtechlogo.webp" alt="Filmtech Academy" class="logo-image">
+                </div>
+                <div class="footer-links">
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Contato</a>
+                </div>
+                <p class="footer-copy">
+                    © 2024 Filmtech Academy. Todos os direitos reservados.
+                </p>
+                <p class="footer-disclaimer">
+                    Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, a responsabilidade não é deles e sim do nosso site.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /**
+         * Filmtech Academy Landing Page - JavaScript
+         * Handles interactions, animations, and carousel functionality
+         */
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Force scroll to top on page load/reload
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            window.scrollTo(0, 0);
+
+            initFAQAccordion();
+            initTestimonialsCarousel();
+            initSmoothScroll();
+            initScrollAnimations();
+            initCarouselDots();
+        });
+
+        // Preloader logic removed
+
+        /**
+         * FAQ Accordion Functionality
+         */
+        function initFAQAccordion() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                    });
+                    
+                    // Toggle current item
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
+        }
+
+        /**
+         * Testimonials Carousel
+         */
+        function initTestimonialsCarousel() {
+            const track = document.querySelector('.testimonials-track');
+            const prevBtn = document.querySelector('.carousel-btn.prev');
+            const nextBtn = document.querySelector('.carousel-btn.next');
+            
+            if (!track || !prevBtn || !nextBtn) return;
+            
+            const cards = track.querySelectorAll('.testimonial-card');
+            let currentIndex = 0;
+            
+            // Get card width including gap
+            function getCardWidth() {
+                const card = cards[0];
+                if (!card) return 0;
+                const style = window.getComputedStyle(track);
+                const gap = parseInt(style.gap) || 24;
+                return card.offsetWidth + gap;
+            }
+            
+            function scrollToIndex(index) {
+                const maxIndex = cards.length - getVisibleCards();
+                currentIndex = Math.max(0, Math.min(index, maxIndex));
+                
+                const scrollAmount = currentIndex * getCardWidth();
+                track.scrollTo({
+                    left: scrollAmount,
+                    behavior: 'smooth'
+                });
+                
+                updateDots();
+            }
+            
+            function getVisibleCards() {
+                const containerWidth = track.parentElement.offsetWidth;
+                const cardWidth = getCardWidth();
+                return Math.floor(containerWidth / cardWidth) || 1;
+            }
+            
+            prevBtn.addEventListener('click', () => {
+                scrollToIndex(currentIndex - 1);
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                scrollToIndex(currentIndex + 1);
+            });
+            
+            // Update current index on manual scroll
+            track.addEventListener('scroll', debounce(() => {
+                const cardWidth = getCardWidth();
+                currentIndex = Math.round(track.scrollLeft / cardWidth);
+                updateDots();
+            }, 100));
+        }
+
+        /**
+         * Initialize Carousel Dots
+         */
+        function initCarouselDots() {
+            const track = document.querySelector('.testimonials-track');
+            const dotsContainer = document.querySelector('.carousel-dots');
+            
+            if (!track || !dotsContainer) return;
+            
+            const cards = track.querySelectorAll('.testimonial-card');
+            const numDots = Math.ceil(cards.length / getVisibleCards());
+            
+            function getVisibleCards() {
+                const containerWidth = track.parentElement.offsetWidth;
+                const card = cards[0];
+                if (!card) return 1;
+                const style = window.getComputedStyle(track);
+                const gap = parseInt(style.gap) || 24;
+                const cardWidth = card.offsetWidth + gap;
+                return Math.floor(containerWidth / cardWidth) || 1;
+            }
+            
+            // Create dots
+            for (let i = 0; i < cards.length; i++) {
+                const dot = document.createElement('button');
+                dot.classList.add('carousel-dot');
+                dot.setAttribute('aria-label', `Ir para depoimento ${i + 1}`);
+                if (i === 0) dot.classList.add('active');
+                
+                dot.addEventListener('click', () => {
+                    const style = window.getComputedStyle(track);
+                    const gap = parseInt(style.gap) || 24;
+                    const cardWidth = cards[0].offsetWidth + gap;
+                    
+                    track.scrollTo({
+                        left: i * cardWidth,
+                        behavior: 'smooth'
+                    });
+                });
+                
+                dotsContainer.appendChild(dot);
+            }
+            
+            // Style for dots
+            const style = document.createElement('style');
+            style.textContent = `
+                .carousel-dot {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    background: var(--color-border);
+                    border: none;
+                    cursor: pointer;
+                    transition: var(--transition-base);
+                }
+                .carousel-dot:hover {
+                    background: var(--color-text-muted);
+                }
+                .carousel-dot.active {
+                    background: var(--color-neon);
+                    box-shadow: 0 0 10px var(--color-neon-glow);
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        /**
+         * Update carousel dots based on current position
+         */
+        function updateDots() {
+            const track = document.querySelector('.testimonials-track');
+            const dots = document.querySelectorAll('.carousel-dot');
+            const cards = track.querySelectorAll('.testimonial-card');
+            
+            if (!track || !dots.length || !cards.length) return;
+            
+            const style = window.getComputedStyle(track);
+            const gap = parseInt(style.gap) || 24;
+            const cardWidth = cards[0].offsetWidth + gap;
+            const currentIndex = Math.round(track.scrollLeft / cardWidth);
+            
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        /**
+         * Smooth Scroll for anchor links
+         */
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (!targetElement) return;
+                    
+                    const headerOffset = 20;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        }
+
+        /**
+         * Scroll Animations using Intersection Observer
+         */
+        function initScrollAnimations() {
+            // Add animate-on-scroll class to elements
+            const animateElements = [
+                '.journey-content',
+                '.journey-visual',
+                '.method-text',
+                '.method-visual',
+                '.pillar-card',
+                '.guarantee-box',
+                '.faq-content',
+                '.pricing-card',
+                '.proof-stats'
+            ];
+            
+            animateElements.forEach(selector => {
+                document.querySelectorAll(selector).forEach(el => {
+                    el.classList.add('animate-on-scroll');
+                });
+            });
+            
+            // Create observer
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Trigger number counter if section contains numbers
+                        entry.target.querySelectorAll('.stat-number, .proof-number').forEach(counter => {
+                            counter.classList.add('visible'); // Fade in
+                            animateCounter(counter);
+                        });
+
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all animated elements
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Stagger animation for pillar cards
+            const pillarCards = document.querySelectorAll('.pillar-card');
+            pillarCards.forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.1}s`;
+            });
+            
+            // Stagger animation for pricing cards
+            const pricingCards = document.querySelectorAll('.pricing-card');
+            pricingCards.forEach((card, index) => {
+                card.style.transitionDelay = `${index * 0.1}s`;
+            });
+        }
+
+        /**
+         * Animate Number Counter
+         */
+        function animateCounter(el) {
+            if (!el.dataset.val) return;
+            
+            const endValue = parseInt(el.dataset.val);
+            const startValue = parseInt(el.dataset.start) || 0;
+            const duration = 1500; // 1.5s
+            const prefix = el.dataset.prefix || '';
+            const suffix = el.dataset.suffix || '';
+            
+            let startTime = null;
+            
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = Math.min((timestamp - startTime) / duration, 1);
+                
+                // Easing function for smooth effect (easeOutExpo)
+                const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                
+                const currentValue = Math.floor(startValue + (endValue - startValue) * easeProgress);
+                el.textContent = `${prefix}${currentValue}${suffix}`;
+                
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            }
+            
+            window.requestAnimationFrame(step);
+        }
+
+        /**
+         * Utility: Debounce function
+         */
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        /**
+         * Track CTA button clicks (for analytics integration)
+         */
+        document.querySelectorAll('.pricing-cta, .cta-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const plan = this.dataset.checkout || 'general';
+                // Mock logging
+            });
+        });
+
+        /**
+         * Video placeholder click handler
+         */
+        const vslPlaceholder = document.querySelector('.vsl-placeholder');
+        if (vslPlaceholder) {
+            vslPlaceholder.addEventListener('click', function() {
+                // When video is ready, replace this with actual video embed
+                console.log('VSL placeholder clicked - integrate video player here');
+            });
+        }
+
+        /**
+         * Add loading state to buttons on click
+         */
+        document.querySelectorAll('.pricing-cta').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // If it's an external link (WhatsApp), don't add loading state
+                if (this.getAttribute('target') === '_blank') return;
+                
+                // For checkout buttons, add brief loading state
+                if (this.dataset.checkout) {
+                    this.classList.add('loading');
+                    this.innerHTML = '<span>Carregando...</span>';
+                    
+                    // Reset after 2 seconds if no redirect happened
+                    setTimeout(() => {
+                        this.classList.remove('loading');
+                        this.innerHTML = 'COMPRAR AGORA';
+                    }, 2000);
+                }
+            });
+        });
+    </script>
 </body>
 </html>

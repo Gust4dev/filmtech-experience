@@ -1,33 +1,14 @@
-import './styles/global.css';
-
 /**
  * Filmtech Academy Landing Page - JavaScript
  * Handles interactions, animations, and carousel functionality
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Force scroll to top on page load/reload
-    if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-    }
-    window.scrollTo(0, 0);
-
     initFAQAccordion();
     initTestimonialsCarousel();
     initSmoothScroll();
     initScrollAnimations();
     initCarouselDots();
-});
-
-// Remove preloader when everything (including images/CSS) is fully loaded
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        // Small buffer to ensure visual smoothness
-        setTimeout(() => {
-            preloader.classList.add('hidden');
-        }, 500); 
-    }
 });
 
 /**
@@ -258,13 +239,6 @@ function initScrollAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                
-                // Trigger number counter if section contains numbers
-                entry.target.querySelectorAll('.stat-number, .proof-number').forEach(counter => {
-                    counter.classList.add('visible'); // Fade in
-                    animateCounter(counter);
-                });
-
                 observer.unobserve(entry.target);
             }
         });
@@ -289,38 +263,6 @@ function initScrollAnimations() {
 }
 
 /**
- * Animate Number Counter
- */
-function animateCounter(el) {
-    if (!el.dataset.val) return;
-    
-    const endValue = parseInt(el.dataset.val);
-    const startValue = parseInt(el.dataset.start) || 0;
-    const duration = 1500; // 1.5s
-    const prefix = el.dataset.prefix || '';
-    const suffix = el.dataset.suffix || '';
-    
-    let startTime = null;
-    
-    function step(timestamp) {
-        if (!startTime) startTime = timestamp;
-        const progress = Math.min((timestamp - startTime) / duration, 1);
-        
-        // Easing function for smooth effect (easeOutExpo)
-        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-        
-        const currentValue = Math.floor(startValue + (endValue - startValue) * easeProgress);
-        el.textContent = `${prefix}${currentValue}${suffix}`;
-        
-        if (progress < 1) {
-            window.requestAnimationFrame(step);
-        }
-    }
-    
-    window.requestAnimationFrame(step);
-}
-
-/**
  * Utility: Debounce function
  */
 function debounce(func, wait) {
@@ -341,19 +283,31 @@ function debounce(func, wait) {
 document.querySelectorAll('.pricing-cta, .cta-button').forEach(button => {
     button.addEventListener('click', function(e) {
         const plan = this.dataset.checkout || 'general';
-        // Mock logging
-        // console.log('CTA Clicked:', plan);
+        
+        // Log for debugging (replace with actual analytics)
+        console.log('CTA Clicked:', {
+            plan: plan,
+            text: this.textContent.trim(),
+            timestamp: new Date().toISOString()
+        });
+        
+        // If it's a checkout button, you could add tracking here
+        // gtag('event', 'click', { 'event_category': 'CTA', 'event_label': plan });
     });
 });
 
 /**
  * Video placeholder click handler
+ * Replace with actual video modal/player when VSL is ready
  */
 const vslPlaceholder = document.querySelector('.vsl-placeholder');
 if (vslPlaceholder) {
     vslPlaceholder.addEventListener('click', function() {
         // When video is ready, replace this with actual video embed
         console.log('VSL placeholder clicked - integrate video player here');
+        
+        // Example: You could open a modal with the video
+        // openVideoModal('VIDEO_URL_HERE');
     });
 }
 
