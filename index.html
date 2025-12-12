@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmtech Academy | O Método que Transforma Estéticas em Operações de Luxo</title>
+    <meta name="description" content="Descubra a estratégia silenciosa que transformou uma estética comum em uma operação de R$ 300k/mês. Curso de PPF, gestão e vendas para o mercado de luxo.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        /* CRITICAL CSS - PRELOADER */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #050505; /* Matches global bg color */
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            border-top-color: #00ff88; /* Neon Green */
+            animation: spin 1s ease-in-out infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader Element -->
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <load src="src/sections/hero.html" />
+    <load src="src/sections/journey.html" />
+    <load src="src/sections/transformation.html" />
+    <load src="src/sections/method.html" />
+    <load src="src/sections/pillars.html" />
+    <load src="src/sections/social-proof.html" />
+    <load src="src/sections/pricing.html" />
+    <load src="src/sections/faq.html" />
+    <load src="src/sections/final-cta.html" />
+    <load src="src/sections/footer.html" />
+
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>

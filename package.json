@@ -1,0 +1,31 @@
+{
+  "name": "filmtech-experience",
+  "version": "1.0.0",
+  "description": "",
+  "main": "optimize-images.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "optimize": "node optimize-images.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gust4dev/filmtech-experience.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gust4dev/filmtech-experience/issues"
+  },
+  "homepage": "https://github.com/Gust4dev/filmtech-experience#readme",
+  "dependencies": {
+    "heic-convert": "^2.1.0",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "vite-plugin-html-inject": "^1.0.1",
+    "vite": "^5.0.0"
+  }
+}
