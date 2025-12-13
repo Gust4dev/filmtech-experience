@@ -113,40 +113,52 @@
     </section>
 
     <section class="transformation" id="transformacao">
+        <!-- Background Split -->
+        <div class="transformation-bg-left"></div>
+        <div class="transformation-bg-right"></div>
+        
         <div class="container">
             <div class="visual-header">
                 <h2 class="visual-title">A Realidade Muda Quando a Estratégia Muda</h2>
             </div>
             
-            <div class="comparison-card wide">
-                <div class="comparison-before">
-                    <span class="comparison-label">ANTES</span>
-                    <div class="image-container before">
-                        <img src="public/optimized/FOTOANTIGA.webp" alt="Gustavo no início da jornada" loading="lazy">
+            <div class="comparison-grid">
+                <!-- Card ANTES -->
+                <div class="comparison-card card-before">
+                    <span class="card-label">ANTES</span>
+                    <div class="card-image">
+                        <img src="public/optimized/FOTOANTIGA.webp" alt="Antes" loading="lazy">
                     </div>
-                    <div class="comparison-stats">
-                        <span>R$ 30k/mês</span>
-                        <span>Trabalho exaustivo</span>
+                    <div class="card-stats">
+                        <p class="stat-value">R$ 30k/mês</p>
+                        <p class="stat-desc">Trabalho exaustivo</p>
                     </div>
                 </div>
-                <div class="comparison-arrow">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                <!-- Portal Arrow -->
+                <div class="portal-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                 </div>
-                <div class="comparison-after">
-                    <span class="comparison-label success">DEPOIS</span>
-                    <div class="image-container after">
-                        <img src="public/optimized/FOTONOVA.HEIC.webp" alt="Gustavo hoje - Loja Premium" loading="lazy">
+
+                <!-- Card DEPOIS -->
+                <div class="comparison-card card-after">
+                    <span class="card-label success">DEPOIS</span>
+                    <div class="card-image">
+                        <!-- Ajuste aqui: --zoom (escala), --x (horizontal), --y (vertical) -->
+                        <img src="public/optimized/FOTONOVA.HEIC.webp" alt="Depois" loading="lazy" style="--zoom: 1.3; --x: --y: -10%;">
                     </div>
-                    <div class="comparison-stats success">
-                        <span>R$ 300k/mês</span>
-                        <span>Operação estruturada</span>
+                    <div class="card-stats">
+                        <p class="stat-value success">R$ 300k/mês</p>
+                        <p class="stat-desc success">Operação estruturada</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 
     <section class="method" id="metodo">
         <div class="container">

@@ -219,7 +219,9 @@ function initScrollAnimations() {
         '.guarantee-box',
         '.faq-content',
         '.pricing-card',
-        '.proof-stats'
+        '.proof-stats',
+        '.comparison-card',
+        '.transformation-split-bg' // animate background too?
     ];
     
     animateElements.forEach(selector => {
