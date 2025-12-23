@@ -28,7 +28,7 @@
                 
                 <div class="hero-badge">
                     <span class="pulse"></span>
-                    MÉTODO VALIDADO POR +200 ALUNOS
+                    MÉTODO VALIDADO POR +1200 ALUNOS
                 </div>
 
                 <p class="hero-subheadline">
@@ -45,17 +45,23 @@
             </div>
             
             <!-- Área do VSL -->
-            <div class="vsl-container">
-                <div class="vsl-placeholder">
-                    <div class="play-button">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M8 5v14l11-7z"/>
-                        </svg>
-                    </div>
-                    <span class="vsl-text">VÍDEO DE VENDAS (VSL) AQUI</span>
-                    <span class="vsl-subtext">Vídeo de 3-5 minutos explicando o método</span>
+            <!-- Área do VSL -->
+                <div class="vsl-wrapper" style="border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.3); border: 2px solid #333;">
+                    <video 
+                        width="100%" 
+                        height="auto" 
+                        controls 
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        poster="public/optimized/Hero-Gustavo-1.webp"
+                        style="display: block;"
+                    >
+                        <source src="public/optimized_videos/hero.mp4" type="video/mp4">
+                        Seu navegador não suporta a tag de vídeo.
+                    </video>
                 </div>
-            </div>
         </div>
         
         <div class="scroll-indicator">
@@ -104,7 +110,7 @@
                     </div>
                     <div class="stat-divider"></div>
                     <div class="stat-item">
-                        <span class="stat-number" data-val="200" data-prefix="+">+200</span>
+                        <span class="stat-number" data-val="1200" data-prefix="+">+1200</span>
                         <span class="stat-label">Alunos formados</span>
                     </div>
                 </div>
@@ -130,7 +136,7 @@
                         <img src="public/optimized/FOTOANTIGA.webp" alt="Antes" loading="lazy">
                     </div>
                     <div class="card-stats">
-                        <p class="stat-value">R$ 30k/mês</p>
+                        <p class="stat-value">R$ 5k/mês</p>
                         <p class="stat-desc">Trabalho exaustivo</p>
                     </div>
                 </div>
@@ -300,67 +306,91 @@
             <div class="testimonials-carousel">
                 <div class="testimonials-track">
                     <!-- Depoimento 1 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-image-placeholder">
-                            <span>PRINT DE DEPOIMENTO / RESULTADO DO ALUNO 1</span>
-                        </div>
+                    <div class="testimonial-card" style="padding: 0; overflow: hidden; height: 550px; position: relative;">
+                        <video 
+                            id="depo-video-1"
+                            class="depo-video"
+                            src="public/optimized_videos/depo1.mp4" 
+                            muted 
+                            loop 
+                            playsinline
+                            style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;"
+                        ></video>
+                        <a href="https://www.instagram.com/juras_insulfilmcacoal" target="_blank" class="testimonial-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); text-decoration: none; cursor: pointer; display: block;">
+                            <span style="color: white; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                @juras_insulfilmcacoal
+                            </span>
+                        </a>
                     </div>
                     
                     <!-- Depoimento 2 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-image-placeholder">
-                            <span>PRINT DE DEPOIMENTO / RESULTADO DO ALUNO 2</span>
-                        </div>
+                    <div class="testimonial-card" style="padding: 0; overflow: hidden; height: 550px; position: relative;">
+                        <video 
+                            id="depo-video-2"
+                            class="depo-video"
+                            src="public/optimized_videos/depo2.mp4" 
+                            muted 
+                            loop 
+                            playsinline
+                            preload="metadata"
+                            style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;"
+                        ></video>
+                        <a href="https://www.instagram.com/sergio_estetica_automotiva" target="_blank" class="testimonial-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); text-decoration: none; cursor: pointer; display: block;">
+                            <span style="color: white; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                @sergio_estetica_automotiva
+                            </span>
+                        </a>
                     </div>
                     
                     <!-- Depoimento 3 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-image-placeholder">
-                            <span>PRINT DE DEPOIMENTO / RESULTADO DO ALUNO 3</span>
-                        </div>
+                    <div class="testimonial-card" style="padding: 0; overflow: hidden; height: 550px; position: relative;">
+                        <video 
+                            id="depo-video-3"
+                            class="depo-video"
+                            src="public/optimized_videos/depo3.mp4" 
+                            muted 
+                            loop 
+                            playsinline
+                            preload="metadata"
+                            style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;"
+                        ></video>
+                        <a href="https://www.instagram.com/lince.studiocar" target="_blank" class="testimonial-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); text-decoration: none; cursor: pointer; display: block;">
+                            <span style="color: white; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                @lince.studiocar
+                            </span>
+                        </a>
                     </div>
                     
                     <!-- Depoimento 4 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-image-placeholder">
-                            <span>PRINT DE DEPOIMENTO / RESULTADO DO ALUNO 4</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Depoimento 5 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-image-placeholder">
-                            <span>PRINT DE DEPOIMENTO / RESULTADO DO ALUNO 5</span>
-                        </div>
-                    </div>
-                    
-                    <!-- Depoimento 6 -->
-                    <div class="testimonial-card">
-                        <div class="testimonial-image-placeholder">
-                            <span>PRINT DE DEPOIMENTO / RESULTADO DO ALUNO 6</span>
-                        </div>
+                    <div class="testimonial-card" style="padding: 0; overflow: hidden; height: 550px; position: relative;">
+                        <video 
+                            id="depo-video-4"
+                            class="depo-video"
+                            src="public/optimized_videos/depo4.mp4" 
+                            muted 
+                            loop 
+                            playsinline
+                            preload="metadata"
+                            style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;"
+                        ></video>
+                        <a href="https://www.instagram.com/juras_insulfilmcacoal" target="_blank" class="testimonial-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); text-decoration: none; cursor: pointer; display: block;">
+                            <span style="color: white; font-weight: 700; display: flex; align-items: center; gap: 8px;">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                @juras_insulfilmcacoal
+                            </span>
+                        </a>
                     </div>
                 </div>
-                
-                <div class="carousel-controls">
-                    <button class="carousel-btn prev" aria-label="Anterior">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M19 12H5M12 19l-7-7 7-7"/>
-                        </svg>
-                    </button>
-                    <div class="carousel-dots"></div>
-                    <button class="carousel-btn next" aria-label="Próximo">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </button>
-                </div>
+            </div>
             </div>
             
             <!-- Stats de prova social -->
             <div class="proof-stats">
                 <div class="proof-stat">
-                    <span class="proof-number" data-val="200" data-prefix="+">+200</span>
+                    <span class="proof-number" data-val="1200" data-prefix="+">+1200</span>
                     <span class="proof-label">Alunos formados</span>
                 </div>
                 <div class="proof-stat">
@@ -392,145 +422,101 @@
             </div>
             
             <div class="pricing-grid">
-                <!-- Plano Online -->
-                <div class="pricing-card">
-                    <div class="pricing-tier">ENTRADA</div>
-                    <h3 class="pricing-name">Online</h3>
-                    <p class="pricing-tagline">O método completo gravado para você assistir no seu ritmo.</p>
-                    
-                    <div class="pricing-price">
-                        <span class="price-original">De R$ 1.997</span>
-                        <div class="price-current">
-                            <span class="price-installment">12x de</span>
-                            <span class="price-value">R$ 99</span>
-                        </div>
-                        <span class="price-full">ou R$ 997 à vista</span>
-                    </div>
-                    
-                    <ul class="pricing-features">
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Acesso vitalício ao curso
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Módulos de Técnica + Gestão + Vendas
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Grupo exclusivo de alunos
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Certificado de conclusão
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Atualizações gratuitas
-                        </li>
-                    </ul>
-                    
-                    <a href="#" class="pricing-cta" data-checkout="online">
-                        COMPRAR AGORA
-                    </a>
-                    <span class="pricing-guarantee">7 dias de garantia incondicional</span>
-                </div>
-
-                <!-- Plano Presencial -->
+                <!-- Plano Imersão 72H -->
                 <div class="pricing-card featured">
                     <div class="pricing-badge">MAIS POPULAR</div>
-                    <div class="pricing-tier">IMERSÃO</div>
-                    <h3 class="pricing-name">Presencial</h3>
-                    <p class="pricing-tagline">3 dias intensivos na sede Filmtech. Teoria e prática lado a lado.</p>
+                    <div class="pricing-tier">IMERSÃO 72H</div>
+                    <h3 class="pricing-name">Técnica, Prática e Resultado</h3>
+                    <p class="pricing-tagline">72 horas intensas. Nada de teoria vazia. Aqui é mão na massa.</p>
                     
                     <div class="pricing-price">
-                        <span class="price-original">De R$ 5.000</span>
+                        <span class="price-original"></span>
                         <div class="price-current">
-                            <span class="price-installment">12x de</span>
-                            <span class="price-value">R$ 333</span>
+                            <span class="price-installment">10x sem juros de</span>
+                            <span class="price-value">R$ 1.200</span>
                         </div>
-                        <span class="price-full">ou R$ 3.497 à vista</span>
+                        <span class="price-full">ou R$ 12.000 à vista</span>
                     </div>
                     
                     <ul class="pricing-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Tudo do plano Online
+                            24h aplicando PPF de verdade
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            3 dias de imersão presencial
+                            Técnica Fast: Execução rápida
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Prática em carros reais
+                            Venda, Posicionamento e Processos
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Networking com outros profissionais
+                            Do preparo à finalização
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Kit de ferramentas exclusivo
+                            Domínio total do jogo
                         </li>
                         <li>
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Coffee break incluso
+                            <svg viewBox="0 0 24 24" fill="currentColor" style="opacity: 0.5;"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                            <span style="opacity: 0.7; text-decoration: line-through;">Hospedagem e Alimentação</span>
                         </li>
                     </ul>
                     
                     <a href="#" class="pricing-cta featured" data-checkout="presencial">
-                        COMPRAR AGORA
+                        GARANTIR MINHA VAGA
                     </a>
-                    <span class="pricing-guarantee">7 dias de garantia incondicional</span>
+                    <span class="pricing-guarantee">Vagas limitadas por turma</span>
                 </div>
 
-                <!-- Plano Mentoria -->
+                <!-- Plano Mentoria Filmtech Growth -->
                 <div class="pricing-card elite">
                     <div class="pricing-tier">ELITE</div>
-                    <h3 class="pricing-name">Mentoria</h3>
-                    <p class="pricing-tagline">Acompanhamento direto e personalizado com Gustavo.</p>
+                    <h3 class="pricing-name">Mentoria Filmtech</h3>
+                    <p class="pricing-tagline">Para quem fatura acima de R$ 100 mil e quer ver lucro de verdade.</p>
                     
+                    <div class="pricing-content-box">
+                        <p class="pricing-description">
+                            Faturar não é o problema. O problema é trabalhar muito e sobrar pouco.
+                            Nós entramos na operação, financeiro, comercial e posicionamento.
+                        </p>
+                    </div>
+
                     <div class="pricing-price">
-                        <span class="price-consult">Valor sob consulta</span>
+                        <span class="price-consult">Aplicação Exclusiva</span>
                         <div class="price-current">
-                            <span class="price-application">Aplicação</span>
-                            <span class="price-value">Exclusiva</span>
+                            <span class="price-value" style="font-size: 2rem;">FILMTECH GROWTH</span>
                         </div>
-                        <span class="price-full">Vagas limitadas por trimestre</span>
                     </div>
                     
                     <ul class="pricing-features">
                         <li>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Tudo do plano Presencial
+                            Para empresas > R$ 100k/mês
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Calls semanais individuais
+                            Mentoria aplicada (não é curso)
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Acesso direto ao WhatsApp de Gustavo
+                            Resolução de Gargalos Financeiros
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Análise da sua operação
+                            Processos Comerciais e de Venda
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Plano de ação personalizado
-                        </li>
-                        <li>
-                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                            Acompanhamento por 6 meses
+                            Até o lucro aparecer
                         </li>
                     </ul>
                     
-                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Tenho%20interesse%20na%20Mentoria%20Filmtech." class="pricing-cta elite" target="_blank">
-                        APLICAR PARA MENTORIA
+                    <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Fatuo%20acima%20de%20100k%20e%20quero%20aplicar%20para%20a%20Mentoria%20Filmtech%20Growth." class="pricing-cta elite" target="_blank">
+                        APLICAR PARA GROWTH
                     </a>
-                    <span class="pricing-guarantee">Processo seletivo obrigatório</span>
                 </div>
             </div>
         </div>
@@ -673,10 +659,11 @@
             window.scrollTo(0, 0);
 
             initFAQAccordion();
-            initTestimonialsCarousel();
+            initFAQAccordion();
+            // initTestimonialsCarousel(); // Removed in favor of Grid
             initSmoothScroll();
             initScrollAnimations();
-            initCarouselDots();
+            // initCarouselDots(); // Removed in favor of Grid
         });
 
         // Preloader logic removed
@@ -709,125 +696,7 @@
         /**
          * Testimonials Carousel
          */
-        function initTestimonialsCarousel() {
-            const track = document.querySelector('.testimonials-track');
-            const prevBtn = document.querySelector('.carousel-btn.prev');
-            const nextBtn = document.querySelector('.carousel-btn.next');
-            
-            if (!track || !prevBtn || !nextBtn) return;
-            
-            const cards = track.querySelectorAll('.testimonial-card');
-            let currentIndex = 0;
-            
-            // Get card width including gap
-            function getCardWidth() {
-                const card = cards[0];
-                if (!card) return 0;
-                const style = window.getComputedStyle(track);
-                const gap = parseInt(style.gap) || 24;
-                return card.offsetWidth + gap;
-            }
-            
-            function scrollToIndex(index) {
-                const maxIndex = cards.length - getVisibleCards();
-                currentIndex = Math.max(0, Math.min(index, maxIndex));
-                
-                const scrollAmount = currentIndex * getCardWidth();
-                track.scrollTo({
-                    left: scrollAmount,
-                    behavior: 'smooth'
-                });
-                
-                updateDots();
-            }
-            
-            function getVisibleCards() {
-                const containerWidth = track.parentElement.offsetWidth;
-                const cardWidth = getCardWidth();
-                return Math.floor(containerWidth / cardWidth) || 1;
-            }
-            
-            prevBtn.addEventListener('click', () => {
-                scrollToIndex(currentIndex - 1);
-            });
-            
-            nextBtn.addEventListener('click', () => {
-                scrollToIndex(currentIndex + 1);
-            });
-            
-            // Update current index on manual scroll
-            track.addEventListener('scroll', debounce(() => {
-                const cardWidth = getCardWidth();
-                currentIndex = Math.round(track.scrollLeft / cardWidth);
-                updateDots();
-            }, 100));
-        }
 
-        /**
-         * Initialize Carousel Dots
-         */
-        function initCarouselDots() {
-            const track = document.querySelector('.testimonials-track');
-            const dotsContainer = document.querySelector('.carousel-dots');
-            
-            if (!track || !dotsContainer) return;
-            
-            const cards = track.querySelectorAll('.testimonial-card');
-            const numDots = Math.ceil(cards.length / getVisibleCards());
-            
-            function getVisibleCards() {
-                const containerWidth = track.parentElement.offsetWidth;
-                const card = cards[0];
-                if (!card) return 1;
-                const style = window.getComputedStyle(track);
-                const gap = parseInt(style.gap) || 24;
-                const cardWidth = card.offsetWidth + gap;
-                return Math.floor(containerWidth / cardWidth) || 1;
-            }
-            
-            // Create dots
-            for (let i = 0; i < cards.length; i++) {
-                const dot = document.createElement('button');
-                dot.classList.add('carousel-dot');
-                dot.setAttribute('aria-label', `Ir para depoimento ${i + 1}`);
-                if (i === 0) dot.classList.add('active');
-                
-                dot.addEventListener('click', () => {
-                    const style = window.getComputedStyle(track);
-                    const gap = parseInt(style.gap) || 24;
-                    const cardWidth = cards[0].offsetWidth + gap;
-                    
-                    track.scrollTo({
-                        left: i * cardWidth,
-                        behavior: 'smooth'
-                    });
-                });
-                
-                dotsContainer.appendChild(dot);
-            }
-            
-            // Style for dots
-            const style = document.createElement('style');
-            style.textContent = `
-                .carousel-dot {
-                    width: 10px;
-                    height: 10px;
-                    border-radius: 50%;
-                    background: var(--color-border);
-                    border: none;
-                    cursor: pointer;
-                    transition: var(--transition-base);
-                }
-                .carousel-dot:hover {
-                    background: var(--color-text-muted);
-                }
-                .carousel-dot.active {
-                    background: var(--color-neon);
-                    box-shadow: 0 0 10px var(--color-neon-glow);
-                }
-            `;
-            document.head.appendChild(style);
-        }
 
         /**
          * Update carousel dots based on current position
@@ -1010,7 +879,7 @@
         /**
          * Add loading state to buttons on click
          */
-        document.querySelectorAll('.pricing-cta').forEach(button => {
+            document.querySelectorAll('.pricing-cta').forEach(button => {
             button.addEventListener('click', function(e) {
                 // If it's an external link (WhatsApp), don't add loading state
                 if (this.getAttribute('target') === '_blank') return;
@@ -1027,6 +896,87 @@
                     }, 2000);
                 }
             });
+        });
+
+        /**
+         * Audio Fade-In Logic
+         * Attempts to play video unmuted with volume fading in.
+         * Note: Browsers usually block unmuted autoplay without user interaction.
+         */
+        function playWithFadeIn(video) {
+            video.volume = 0;
+            video.muted = false;
+            
+            var playPromise = video.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    // Autoplay started! Fade in volume
+                    let vol = 0;
+                    const interval = 100; // 100ms steps
+                    const step = 0.1; // 10% increase
+                    
+                    const fadeAudio = setInterval(function () {
+                        if (vol < 1.0) {
+                            vol += step;
+                            if (vol > 1.0) vol = 1.0;
+                            video.volume = vol;
+                        } else {
+                            clearInterval(fadeAudio);
+                        }
+                    }, interval);
+                })
+                .catch(error => {
+                    // Auto-play was prevented.
+                    // Fallback to muted autoplay
+                    console.log("Autoplay with sound blocked. Fallback to muted.");
+                    video.muted = true;
+                    video.play();
+                });
+            }
+        }
+
+        // Initialize Video Logic for Grid
+        document.addEventListener('DOMContentLoaded', () => {
+             // Hero Video Fade
+             const heroVideo = document.querySelector('.vsl-wrapper video');
+             if (heroVideo) {
+                 setTimeout(() => playWithFadeIn(heroVideo), 500);
+             }
+
+             // Global Video Interaction Handler (Click to Toggle)
+             document.querySelectorAll('.depo-video').forEach(video => {
+                 video.addEventListener('click', function(e) {
+                     e.preventDefault();
+                     if (video.paused) {
+                         playWithFadeIn(video);
+                     } else {
+                         video.pause();
+                     }
+                 });
+             });
+
+             // Smart Video Observer for Testimonials
+             const videoObserver = new IntersectionObserver((entries) => {
+                 entries.forEach(entry => {
+                     const video = entry.target;
+                     
+                     if (entry.isIntersecting) {
+                         // ONLY play the first video automatically when it becomes visible
+                         if (video.id === 'depo-video-1' && video.paused) {
+                             playWithFadeIn(video);
+                         }
+                     } else {
+                         // Video left viewport: Pause and Mute (applies to ALL videos)
+                         video.pause();
+                         video.muted = true;
+                     }
+                 });
+             }, { threshold: 0.6 }); // Trigger when 60% visible
+
+             document.querySelectorAll('.depo-video').forEach(video => {
+                 videoObserver.observe(video);
+             });
         });
     </script>
 </body>

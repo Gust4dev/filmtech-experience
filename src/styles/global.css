@@ -1410,79 +1410,50 @@ section:last-of-type {
 }
 
 /* Carousel */
+/* Testimonials Grid Layout */
 .testimonials-carousel {
-    position: relative;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto 60px;
+    padding: 0 20px;
 }
 
 .testimonials-track {
-    display: flex;
-    gap: 24px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 24px; /* Space for scrollbar if visible */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
-}
-
-.testimonials-track::-webkit-scrollbar {
-    display: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 .testimonial-card {
-    flex: 0 0 300px; /* Mobile width */
-    background: var(--color-bg-card);
+    width: 100%;
+    height: 550px; /* Consistently tall */
+    padding: 0;
+    overflow: hidden;
+    position: relative;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
-    padding: 16px;
-    scroll-snap-align: center;
-}
-
-@media (min-width: 768px) {
-    .testimonial-card {
-        flex: 0 0 320px;
-    }
-}
-
-.testimonial-image-placeholder {
-    aspect-ratio: 9/16;
-    background: var(--color-bg-secondary);
-    border-radius: var(--radius-sm);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-    font-size: 0.75rem;
-    color: var(--color-text-muted);
-    border: 1px dashed var(--color-border);
-}
-
-.carousel-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    margin-top: 32px;
-}
-
-.carousel-btn {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 1px solid var(--color-border);
-    color: var(--color-text-secondary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
     transition: var(--transition-base);
 }
 
-.carousel-btn:hover {
+.testimonial-card:hover {
     border-color: var(--color-neon);
-    color: var(--color-neon);
-    background: var(--color-neon-subtle);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 640px) {
+    .testimonials-track {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .testimonials-track {
+        grid-template-columns: repeat(4, 1fr); /* 4 Side-by-side */
+    }
+}
+
+.carousel-controls {
+    display: none; /* Hidden as per request */
 }
 
 .carousel-btn svg {
@@ -1556,8 +1527,9 @@ section:last-of-type {
 
 @media (min-width: 968px) {
     .pricing-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         align-items: center; /* Center vertically so height differences are visible */
+        max-width: 900px; /* Limit width so cards don't get too wide */
     }
 }
 
