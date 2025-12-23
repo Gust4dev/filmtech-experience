@@ -488,7 +488,10 @@ section:last-of-type {
 ======================================== */
 .journey {
     padding: var(--section-padding) 0;
-    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%); /* Soft Gradient */
+    background-color: #ffffff;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(4, 120, 87, 0.03) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.05) 0px, transparent 50%);
     position: relative;
     text-align: center;
     overflow: hidden;
@@ -1098,9 +1101,10 @@ section:last-of-type {
 ======================================== */
 .method {
     padding: var(--section-padding) 0;
-    background: radial-gradient(circle at 100% 50%, #fdfce8 0%, #ffffff 60%); /* Gold tint right */
+    background: radial-gradient(circle at 50% 0%, #064e3b 0%, #022c22 100%); /* Deep Emerald Theme */
     position: relative;
     overflow: hidden;
+    color: #ffffff; /* Force light text */
 }
 
 /* Ambient Flare - Gold */
@@ -1111,11 +1115,11 @@ section:last-of-type {
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-    opacity: 0.8;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+    opacity: 0.6;
     z-index: 0;
     pointer-events: none;
-    filter: blur(160px); /* Increased blur */
+    filter: blur(160px); 
 }
 
 .method .container {
@@ -1133,6 +1137,7 @@ section:last-of-type {
     font-size: clamp(1.75rem, 4vw, 2.75rem);
     font-weight: 800;
     line-height: 1.2;
+    color: #ffffff;
 }
 
 .method-content {
@@ -1156,7 +1161,7 @@ section:last-of-type {
 
 .method-lead {
     font-size: 1.25rem;
-    color: var(--color-text-secondary);
+    color: #e2e8f0; /* Light Slate for readability on dark */
 }
 
 .method-emphasis {
@@ -1168,9 +1173,10 @@ section:last-of-type {
     display: flex;
     gap: 16px;
     padding: 24px;
-    background: var(--color-neon-subtle);
-    border: 1px solid rgba(57, 255, 20, 0.2);
+    background: rgba(6, 95, 70, 0.5); /* Semi-transparent emerald */
+    border: 1px solid rgba(52, 211, 153, 0.3);
     border-radius: var(--radius-md);
+    backdrop-filter: blur(4px);
 }
 
 .highlight-icon {
@@ -1180,7 +1186,7 @@ section:last-of-type {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--color-neon);
+    color: #34d399; /* Bright Emerald */
 }
 
 .highlight-icon svg {
@@ -1190,7 +1196,7 @@ section:last-of-type {
 
 .method-highlight-box p {
     font-size: 1rem;
-    color: var(--color-text-secondary);
+    color: #f1f5f9;
 }
 
 .method-image {
@@ -1203,7 +1209,9 @@ section:last-of-type {
 ======================================== */
 .pillars {
     padding: var(--section-padding) 0;
-    background: #f8fafc; /* Simpler base */
+    background-color: #f8fafc;
+    background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+    background-size: 32px 32px;
     position: relative;
     overflow: hidden;
 }
@@ -1388,7 +1396,9 @@ section:last-of-type {
 ======================================== */
 .social-proof {
     padding: var(--section-padding) 0;
-    background: var(--color-bg-primary);
+    background: linear-gradient(135deg, #09090b 0%, #18181b 100%); /* Dark Cinematic */
+    color: #ffffff;
+    position: relative;
 }
 
 .social-header {
@@ -1402,11 +1412,12 @@ section:last-of-type {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 16px;
+    color: #ffffff;
 }
 
 .social-subtitle {
     font-size: 1.125rem;
-    color: var(--color-text-secondary);
+    color: #a1a1aa; /* Zinc 400 */
 }
 
 /* Carousel */
@@ -1496,7 +1507,8 @@ section:last-of-type {
 ======================================== */
 .pricing {
     padding: var(--section-padding) 0;
-    background: var(--color-bg-secondary);
+    background: radial-gradient(ellipse at top, #fffbeb 0%, #fff 60%, #fdfbf7 100%); /* Gold Standard */
+    position: relative;
 }
 
 .pricing-header {
@@ -1744,7 +1756,7 @@ section:last-of-type {
 ======================================== */
 .faq {
     padding: var(--section-padding) 0;
-    background: var(--color-bg-primary);
+    background: linear-gradient(to bottom, #ffffff 0%, #f0fdf4 100%);
 }
 
 .faq-grid {
@@ -1932,9 +1944,10 @@ section:last-of-type {
    FOOTER
 ======================================== */
 .footer {
-    background: var(--color-bg-primary);
+    background: #022c22; /* Deepest Green */
     padding: 60px 0;
-    border-top: 1px solid var(--color-border);
+    border-top: 1px solid var(--color-gold);
+    color: #ecfdf5;
 }
 
 .footer-content {
@@ -1954,22 +1967,22 @@ section:last-of-type {
 
 .footer-links a {
     font-size: 0.875rem;
-    color: var(--color-text-muted);
+    color: #a7f3d0;
     transition: var(--transition-base);
 }
 
 .footer-links a:hover {
-    color: var(--color-neon);
+    color: #ffffff;
 }
 
 .footer-copy {
     font-size: 0.875rem;
-    color: var(--color-text-muted);
+    color: #6ee7b7;
 }
 
 .footer-disclaimer {
     font-size: 0.75rem;
-    color: var(--color-text-muted);
+    color: #34d399;
     opacity: 0.5;
     max-width: 800px;
 }
