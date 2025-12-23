@@ -1459,7 +1459,15 @@ section:last-of-type {
 
 @media (min-width: 1024px) {
     .testimonials-track {
-        grid-template-columns: repeat(4, 1fr); /* 4 Side-by-side */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .testimonials-track .testimonial-card {
+        width: calc(33.33% - 14px); /* Fits 3 items with 20px gap */
+        flex-grow: 0;
     }
 }
 
