@@ -976,8 +976,25 @@
 
         // Initialize Video Logic for Grid
         document.addEventListener('DOMContentLoaded', () => {
-             // Hero Video Fade
+             // Hero Video Reference
              const heroVideo = document.querySelector('.vsl-wrapper video');
+
+             // Helper to pause ALL videos except the current one
+             function pauseAllVideos(currentVideo) {
+                 // Pause Hero
+                 if (heroVideo && heroVideo !== currentVideo && !heroVideo.paused) {
+                     heroVideo.pause();
+                 }
+
+                 // Pause all Testimonials
+                 document.querySelectorAll('.depo-video').forEach(video => {
+                     if (video !== currentVideo && !video.paused) {
+                         video.pause();
+                     }
+                 });
+             }
+
+             // Hero Video Fade In
              if (heroVideo) {
                  setTimeout(() => playWithFadeIn(heroVideo), 500);
              }
@@ -987,6 +1004,8 @@
                  video.addEventListener('click', function(e) {
                      e.preventDefault();
                      if (video.paused) {
+                         // Exclusive Playback: Pause everyone else first
+                         pauseAllVideos(video);
                          playWithFadeIn(video);
                      } else {
                          video.pause();
@@ -1002,10 +1021,12 @@
                      if (entry.isIntersecting) {
                          // ONLY play the first video automatically when it becomes visible
                          if (video.id === 'depo-video-1' && video.paused) {
+                             // Exclusive Playback: Pause everyone else first
+                             pauseAllVideos(video);
                              playWithFadeIn(video);
                          }
                      } else {
-                         // Video left viewport: Pause and Mute (applies to ALL videos)
+                         // Video left viewport: Pause and Mute
                          video.pause();
                          video.muted = true;
                      }
