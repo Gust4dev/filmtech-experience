@@ -683,6 +683,52 @@
         </div>
     </footer>
 
+    <!-- Terms Agreement Modal -->
+    <div id="termsModal" class="terms-modal">
+        <div class="terms-modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M9 12l2 2 4-4"/>
+                        <circle cx="12" cy="12" r="10"/>
+                    </svg>
+                </div>
+                <h2>Você está pronto para o próximo nível?</h2>
+                <p>Para garantir a qualidade do nosso ecossistema, precisamos que você esteja alinhado com nossos princípios.</p>
+            </div>
+            
+            <div class="terms-checklist">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="check-terms">
+                    <span class="checkmark"></span>
+                    <span class="checkbox-text">Concordo com os Termos e Condições da Filmtech Academy.</span>
+                </label>
+                
+                <label class="checkbox-container">
+                    <input type="checkbox" id="check-commitment">
+                    <span class="checkmark"></span>
+                    <span id="commitment-text" class="checkbox-text highlight">Me comprometo a aplicar o método para faturar <strong>100k+ a mais</strong> no meu negócio.</span>
+                </label>
+            </div>
+
+            <button id="modal-confirm-btn" class="cta-button primary full-width disabled">
+                <span class="btn-text">CONFIRMAR E CONTINUAR</span>
+                <span class="lock-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+                        <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                    </svg>
+                </span>
+            </button>
+            <p class="modal-security-text">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                Ambiente Seguro e Criptografado
+            </p>
+        </div>
+    </div>
+
     <script>
         /**
          * Filmtech Academy Landing Page - JavaScript
@@ -1037,6 +1083,115 @@
                  videoObserver.observe(video);
              });
         });
-    </script>
+
+        /* ========================================
+           TERMS MODAL LOGIC (SALES FUNNEL)
+        ======================================== */
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('termsModal');
+            const closeModal = document.querySelector('.close-modal');
+            const checkTerms = document.getElementById('check-terms');
+            const checkCommitment = document.getElementById('check-commitment');
+            const confirmBtn = document.getElementById('modal-confirm-btn');
+            
+            let currentIntent = ''; 
+
+            // WhatsApp Configuration
+            const WA_NUMBER = '556281726011';
+            // Imersão now implies high level check, so we use a high-ticket message
+            const WA_MSG_IMERSAO = "Olá! Minha empresa já fatura 100k+ e tenho interesse na Imersão 72H. Aceitei os termos.";
+            
+            // Dynamic Text Configuration
+            // User requested "Imersão" to have the "Already making 100k+" text
+            const TEXT_HIGH_TICKET = `Declaro que minha empresa já fatura <strong>acima de R$ 100k/mês</strong> (ou está próxima) e busco escala.`;
+
+            // 1. Open Modal Logic
+            function openTermsModal() {
+                // Always set to Imersão intent for now as Mentoria is external
+                currentIntent = 'imersao';
+
+                // Update Text 
+                const textTarget = document.getElementById('commitment-text');
+                if (textTarget) {
+                    textTarget.innerHTML = TEXT_HIGH_TICKET;
+                }
+                
+                // Reset State
+                checkTerms.checked = false;
+                checkCommitment.checked = false;
+                confirmBtn.classList.add('disabled');
+                
+                // Show Modal
+                modal.style.display = 'flex';
+                // Small delay for CSS transition
+                requestAnimationFrame(() => {
+                    modal.classList.add('show');
+                });
+            }
+
+            // 2. Close Modal Logic
+            function closeTermsModal() {
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 300);
+            }
+
+            closeModal.addEventListener('click', closeTermsModal);
+            
+            // Close on click outside
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeTermsModal();
+                }
+            });
+
+            // 3. Validation Logic
+            function validateCheckboxes() {
+                if (checkTerms.checked && checkCommitment.checked) {
+                    confirmBtn.classList.remove('disabled');
+                } else {
+                    confirmBtn.classList.add('disabled');
+                }
+            }
+
+            checkTerms.addEventListener('change', validateCheckboxes);
+            checkCommitment.addEventListener('change', validateCheckboxes);
+
+            // 4. Confirm & Redirect Logic
+            confirmBtn.addEventListener('click', () => {
+                if (confirmBtn.classList.contains('disabled')) return;
+
+                let message = encodeURIComponent(WA_MSG_IMERSAO);
+
+                // Redirect
+                const url = `https://wa.me/${WA_NUMBER}?text=${message}`;
+                window.open(url, '_blank');
+                
+                closeTermsModal();
+            });
+
+            // 5. Hijack Buttons
+            
+            // Imersão Buttons -> Open Modal with 100k check
+            const imersaoButtons = document.querySelectorAll('.pricing-cta[data-checkout="presencial"], .pricing-cta.featured');
+            imersaoButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    // Open Modal
+                    openTermsModal();
+                });
+            });
+
+            // Mentoria Buttons -> Redirect to External Site
+            const mentoriaButtons = document.querySelectorAll('.pricing-cta.elite');
+            mentoriaButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.open('https://octogrowth.vercel.app/', '_blank');
+                });
+            });
+        });
+        </script>
 </body>
 </html>
