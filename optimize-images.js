@@ -32,7 +32,7 @@ async function checkDependencies() {
 }
 
 const CONFIG = {
-    inputDir: './public',
+    inputDir: './public/optimized',
     outputDir: './public/optimized',
     // Extensões suportadas
     supportedExtensions: ['.jpg', '.jpeg', '.png', '.webp', '.gif', '.heic', '.heif'],
