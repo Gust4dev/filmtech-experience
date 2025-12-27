@@ -29,8 +29,8 @@
       content="Descubra a estratégia silenciosa que transformou uma estética comum em uma operação de R$ 300k/mês. Curso de PPF, gestão e vendas para o mercado de luxo."
     />
 
-    <link rel="icon" type="image/png" href="/filmtechlogo.png" />
-    <link rel="apple-touch-icon" href="/filmtechlogo.png" />
+    <link rel="icon" type="image/webp" href="/filmtechlogo.webp" />
+    <link rel="apple-touch-icon" href="/filmtechlogo.webp" />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:domain" content="filmtech-experience.vercel.app" />
@@ -48,7 +48,7 @@
     />
     <meta
       property="twitter:image"
-      content="https://filmtech-experience.vercel.app/filmtechlogo.png"
+      content="https://filmtech-experience.vercel.app/filmtechlogo.webp"
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -216,6 +216,7 @@
                 src="public/optimized/FOTOANTIGA.webp"
                 alt="Antes"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="card-stats">
@@ -242,6 +243,7 @@
                 src="public/optimized/FOTONOVA.HEIC.webp"
                 alt="Depois"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div class="card-stats">
@@ -305,6 +307,7 @@
                 src="public/optimized/ppfaplicado.JPG.webp"
                 alt="Carro de luxo com PPF aplicado"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -1485,6 +1488,8 @@
               src="public/optimized/filmtechlogo.webp"
               alt="Filmtech Academy"
               class="logo-image"
+              loading="lazy"
+              decoding="async"
             />
           </div>
           <div class="footer-links">
@@ -1674,7 +1679,6 @@
           });
         });
 
-        // Create observer
         const observerOptions = {
           root: null,
           rootMargin: "0px",
@@ -1686,11 +1690,10 @@
             if (entry.isIntersecting) {
               entry.target.classList.add("visible");
 
-              // Trigger number counter if section contains numbers
               entry.target
                 .querySelectorAll(".stat-number, .proof-number")
                 .forEach((counter) => {
-                  counter.classList.add("visible"); // Fade in
+                  counter.classList.add("visible");
                   animateCounter(counter);
                 });
 
@@ -1699,27 +1702,21 @@
           });
         }, observerOptions);
 
-        // Observe all animated elements
         document.querySelectorAll(".animate-on-scroll").forEach((el) => {
           observer.observe(el);
         });
 
-        // Stagger animation for pillar cards
         const pillarCards = document.querySelectorAll(".pillar-card");
         pillarCards.forEach((card, index) => {
           card.style.transitionDelay = `${index * 0.1}s`;
         });
 
-        // Stagger animation for pricing cards
         const pricingCards = document.querySelectorAll(".pricing-card");
         pricingCards.forEach((card, index) => {
           card.style.transitionDelay = `${index * 0.1}s`;
         });
       }
 
-      /**
-       * Animate Number Counter
-       */
       function animateCounter(el) {
         if (!el.dataset.val) return;
 
@@ -1735,7 +1732,6 @@
           if (!startTime) startTime = timestamp;
           const progress = Math.min((timestamp - startTime) / duration, 1);
 
-          // Easing function for smooth effect (easeOutExpo)
           const easeProgress =
             progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
 
@@ -1752,9 +1748,6 @@
         window.requestAnimationFrame(step);
       }
 
-      /**
-       * Utility: Debounce function
-       */
       function debounce(func, wait) {
         let timeout;
         return function executedFunction(...args) {
@@ -1767,19 +1760,14 @@
         };
       }
 
-      /**
-       * Track CTA button clicks (for analytics integration)
-       */
       document
         .querySelectorAll(".pricing-cta, .cta-button")
         .forEach((button) => {
           button.addEventListener("click", function (e) {
             const plan = this.dataset.checkout || "general";
-            // Mock logging
           });
         });
 
-      /* Optimized Video & Modal Logic */
       const vslPlaceholder = document.querySelector(".vsl-placeholder");
       if (vslPlaceholder) {
         vslPlaceholder.addEventListener("click", () => console.log("VSL clicked"));
@@ -1807,7 +1795,6 @@
         });
       });
 
-      // Video Logic
       const heroVideo = document.querySelector(".vsl-wrapper video");
       if (heroVideo) {
         heroVideo.volume = 0;
@@ -1846,7 +1833,8 @@
       allVideos.forEach((video) => {
         video.addEventListener("play", function () {
           pauseAllOthers(this);
-          if (isMobile) {
+          const isHeroVideo = video.closest(".vsl-wrapper") !== null;
+          if (isMobile && !isHeroVideo) {
             if (video.requestFullscreen) video.requestFullscreen();
             else if (video.webkitEnterFullscreen) video.webkitEnterFullscreen();
             else if (video.msRequestFullscreen) video.msRequestFullscreen();
@@ -1873,7 +1861,6 @@
         });
       });
 
-      // Terms Modal Logic
       const modal = document.getElementById("termsModal");
       const closeModal = document.querySelector(".close-modal");
       const checkTerms = document.getElementById("check-terms");
@@ -1893,11 +1880,10 @@
         const textTarget = document.getElementById("commitment-text");
         if (textTarget) textTarget.innerHTML = intent === "socio" ? TEXT_SOCIO : TEXT_DEFAULT;
         
-        // CORRECTION: Terms checked by default, Commitment unchecked (User Request)
         checkTerms.checked = true;
-        checkCommitment.checked = false; // User must explicitly check this
+        checkCommitment.checked = false;
         
-        confirmBtn.classList.add("disabled"); // Always start disabled because commitment is false
+        confirmBtn.classList.add("disabled");
         
         modal.style.display = "flex";
         requestAnimationFrame(() => modal.classList.add("show"));
@@ -1924,8 +1910,6 @@
 
           let msg = currentIntent === "socio" ? WA_MSG_SOCIO : (currentIntent === "imersao" ? WA_MSG_IMERSAO : WA_MSG_MENTORIA);
           
-          // FIX: Use wa.me for better mobile compatibility
-          // AND: Do NOT close modal immediately to prevent confusion if redirect lags
           window.location.href = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
         });
 

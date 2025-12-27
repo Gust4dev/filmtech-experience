@@ -401,58 +401,45 @@ button {
         rgba(212, 175, 55, 0.15) 0%,
         transparent 40%
       ),
-      /* Gold subtle glow top right */
-        radial-gradient(
-          circle at 0% 100%,
-          rgba(4, 120, 87, 0.2) 0%,
-          transparent 50%
-        ),
-      /* Green glow bottom left */
-        linear-gradient(135deg, #18181b 0%, #09090b 100%); /* Dark Zinc Base */
+      radial-gradient(
+        circle at 0% 100%,
+        rgba(4, 120, 87, 0.2) 0%,
+        transparent 50%
+      ),
+      linear-gradient(135deg, #18181b 0%, #09090b 100%);
 
-    /* Elegant Bordering */
-    border-top: 1px solid rgba(212, 175, 55, 0.3); /* Subtle Gold Top */
-    border-bottom: 4px solid var(--color-neon); /* Keep green bottom or mix with gold */
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    border-bottom: 4px solid var(--color-neon);
 
-    /* Spacing for Elegance */
-    padding-top: 100px; /* More breathing room top */
+    padding-top: 100px;
     padding-bottom: 80px;
 
-    /* Let the gradient shine through */
     --hero-overlay-opacity: 0.2;
   }
 
-  /* Gold Accents for Mobile Text */
   .hero .hero-headline .highlight {
-    color: var(
-      --color-gold
-    ); /* Gold highlight on mobile for luxury feel? Or keep Neon? 
-                                     User asked for "CINZA, VERDE E DETALHES DOURADOS". 
-                                     Let's keep Neon for consistency but add Gold accents elsewhere */
+    color: var(--color-gold);
     text-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
   }
 
-  /* Make the badge more elegant on mobile */
   .hero .hero-badge {
     background: rgba(4, 120, 87, 0.1);
-    border: 1px solid var(--color-gold); /* Gold border for badge */
-    color: var(--color-gold); /* Gold text for badge */
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
   }
 
   .hero .pulse {
-    background: var(--color-gold); /* Gold pulse */
+    background: var(--color-gold);
     box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
   }
 }
 
-/* Regra Geral para Separadores de Seção */
 section {
   border-bottom: 4px solid var(--color-neon);
-  overflow: hidden; /* Prevent any section from causing horizontal scroll */
-  max-width: 100vw; /* Never exceed viewport */
+  overflow: hidden;
+  max-width: 100vw;
 }
 
-/* Remove a borda da última seção (opcional, mas esteticamente melhor) */
 section:last-of-type {
   border-bottom: none;
 }
@@ -469,7 +456,7 @@ section:last-of-type {
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 1350px; /* Wider container */
+  max-width: 1350px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -480,16 +467,13 @@ section:last-of-type {
 @media (min-width: 968px) {
   .hero-content {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr; /* Video (Right) gets more space now */
-    gap: 80px; /* Increased gap */
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
     text-align: left;
     align-items: center;
   }
 }
 
-/* ... existing styles ... */
-
-/* Hero Text Styles (Restored) */
 .hero-text {
   display: flex;
   flex-direction: column;
@@ -863,7 +847,7 @@ section:last-of-type {
   position: relative;
   padding: var(--section-padding) 0;
   overflow: hidden;
-  min-height: auto; /* Removido 650px para evitar quebras */
+  min-height: auto;
 }
 
 .transformation-bg-left,
@@ -881,7 +865,7 @@ section:last-of-type {
 
 .transformation-bg-left {
   left: 0;
-  background-image: url("/public/WallpaperAntes.jpg");
+  background-image: url("/public/WallpaperAntes.webp");
   filter: blur(10px) brightness(0.8) contrast(1.1);
   mask-image: linear-gradient(
     to right,
@@ -914,7 +898,7 @@ section:last-of-type {
 
 .transformation-bg-right {
   right: 0;
-  background-image: url("/public/WallpaperDepois.JPG");
+  background-image: url("/public/WallpaperDepois.webp");
   filter: blur(6px) brightness(1.15) contrast(0.95);
   mask-image: linear-gradient(
     to left,
@@ -1489,14 +1473,10 @@ section:last-of-type {
 ======================================== */
 .method {
   padding: var(--section-padding) 0;
-  background: radial-gradient(
-    circle at 50% 0%,
-    #064e3b 0%,
-    #022c22 100%
-  ); /* Deep Emerald Theme */
+  background: radial-gradient(circle at 50% 0%, #064e3b 0%, #022c22 100%);
   position: relative;
   overflow: hidden;
-  color: #ffffff; /* Force light text */
+  color: #ffffff;
 }
 
 /* Ambient Flare - Gold */
@@ -1539,7 +1519,7 @@ section:last-of-type {
 .method-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(24px, 8vw, 60px); /* Fluidez entre mobile e desktop */
+  gap: clamp(24px, 8vw, 60px);
   align-items: center;
 }
 
@@ -1557,7 +1537,7 @@ section:last-of-type {
 
 .method-lead {
   font-size: 1.25rem;
-  color: #e2e8f0; /* Light Slate for readability on dark */
+  color: #e2e8f0;
 }
 
 .method-emphasis {
@@ -1778,9 +1758,8 @@ section:last-of-type {
   right: 20px;
   opacity: 0.5;
   z-index: 0;
-  /* Overriding badge pos if needed, or removing */
 }
-/* Fix for overlapping badge */
+
 .pillar-card.featured .pillar-number {
   display: none;
 }
@@ -1829,11 +1808,7 @@ section:last-of-type {
 ======================================== */
 .social-proof {
   padding: var(--section-padding) 0;
-  background: linear-gradient(
-    135deg,
-    #09090b 0%,
-    #18181b 100%
-  ); /* Dark Cinematic */
+  background: linear-gradient(135deg, #09090b 0%, #18181b 100%);
   color: #ffffff;
   position: relative;
 }
@@ -1854,7 +1829,7 @@ section:last-of-type {
 
 .social-subtitle {
   font-size: 1.125rem;
-  color: #a1a1aa; /* Zinc 400 */
+  color: #a1a1aa;
 }
 
 /* Carousel */
@@ -1873,7 +1848,7 @@ section:last-of-type {
 
 .testimonial-card {
   width: 100%;
-  height: 550px; /* Consistently tall */
+  height: 550px;
   padding: 0;
   overflow: hidden;
   position: relative;
@@ -1903,13 +1878,13 @@ section:last-of-type {
   }
 
   .testimonials-track .testimonial-card {
-    width: calc(33.33% - 14px); /* Fits 3 items with 20px gap */
+    width: calc(33.33% - 14px);
     flex-grow: 0;
   }
 }
 
 .carousel-controls {
-  display: none; /* Hidden as per request */
+  display: none;
 }
 
 .carousel-btn svg {
@@ -1957,7 +1932,7 @@ section:last-of-type {
     #fffbeb 0%,
     #fff 60%,
     #fdfbf7 100%
-  ); /* Gold Standard */
+  );
   position: relative;
 }
 
@@ -1990,8 +1965,8 @@ section:last-of-type {
 @media (min-width: 968px) {
   .pricing-grid {
     grid-template-columns: repeat(2, 1fr);
-    align-items: center; /* Center vertically so height differences are visible */
-    max-width: 900px; /* Limit width so cards don't get too wide */
+    align-items: center;
+    max-width: 900px;
   }
 }
 
@@ -2004,12 +1979,12 @@ section:last-of-type {
   flex-direction: column;
   position: relative;
   transition: var(--transition-base);
-  height: 100%; /* Ensure full height in mobile/stacked */
+  height: 100%;
 }
 
 @media (min-width: 968px) {
   .pricing-card {
-    height: auto; /* Let content dictate height in desktop grid */
+    height: auto;
   }
 }
 
@@ -2020,7 +1995,7 @@ section:last-of-type {
 
 .pricing-card.featured {
   background: var(--color-bg-card-hover);
-  border: 1px solid var(--color-gold); /* Gold border for featured */
+  border: 1px solid var(--color-gold);
   padding: 48px 32px;
   z-index: 2;
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
@@ -2028,7 +2003,7 @@ section:last-of-type {
 }
 
 .pricing-card.featured:hover {
-  transform: scale(1.05) translateY(-5px); /* Preserve scale on hover */
+  transform: scale(1.05) translateY(-5px);
 }
 
 .pricing-card.elite {
@@ -2037,7 +2012,7 @@ section:last-of-type {
     var(--color-bg-card) 0%,
     rgba(57, 255, 20, 0.05) 100%
   );
-  padding: 24px 32px; /* Slightly compacted padding */
+  padding: 24px 32px;
 }
 
 .pricing-badge {
@@ -2224,9 +2199,9 @@ section:last-of-type {
 @media (min-width: 800px) {
   .faq-grid {
     grid-template-columns: 350px 1fr;
-    grid-template-rows: auto 1fr; /* Row 1: Title, Row 2: Content */
-    align-items: stretch; /* Stretch to fill height */
-    gap: 0 60px; /* Column gap only, row gap handled by margins/padding */
+    grid-template-rows: auto 1fr;
+    align-items: stretch;
+    gap: 0 60px;
   }
 
   .faq-title {
@@ -2239,12 +2214,12 @@ section:last-of-type {
   .guarantee-box {
     grid-column: 1;
     grid-row: 2;
-    position: static; /* Remove sticky */
+    position: static;
     top: auto;
-    height: auto; /* Allow stretch to fill row height */
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Opt: Center content vertically if box is taller than content */
+    justify-content: center;
   }
 
   .faq-list {
@@ -2259,13 +2234,9 @@ section:last-of-type {
   border-radius: var(--radius-lg);
   padding: 32px;
   text-align: center;
-  /* Removed sticky positioning here as well for mobile default */
 }
 
-/* ... existing element styles ... */
-
 .guarantee-badge {
-  /* ... unchanged ... */
   width: 60px;
   height: 60px;
   border-radius: 50%;
@@ -2277,7 +2248,6 @@ section:last-of-type {
   margin: 0 auto 24px;
   box-shadow: 0 0 20px var(--color-neon-glow);
 }
-/* ... rest of current file content ... */
 
 .guarantee-badge svg {
   width: 32px;
@@ -2336,7 +2306,7 @@ section:last-of-type {
 }
 
 .faq-item.active .faq-question svg {
-  transform: rotate(45deg); /* Or 180deg depending on icon preference */
+  transform: rotate(45deg);
 }
 
 .faq-answer {
@@ -2346,7 +2316,7 @@ section:last-of-type {
 }
 
 .faq-item.active .faq-answer {
-  max-height: 200px; /* Adjust as needed */
+  max-height: 200px;
 }
 
 .faq-answer p {
@@ -2402,7 +2372,7 @@ section:last-of-type {
    FOOTER
 ======================================== */
 .footer {
-  background: #022c22; /* Deepest Green */
+  background: #022c22;
   padding: 60px 0;
   border-top: 1px solid var(--color-gold);
   color: #ecfdf5;
@@ -2489,7 +2459,7 @@ section:last-of-type {
    Premium / Dark Overlay / Glassmorphism
 ======================================== */
 .terms-modal {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   z-index: 9999;
   left: 0;
@@ -2497,7 +2467,7 @@ section:last-of-type {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.85); /* Darker overlay */
+  background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(8px);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -2510,13 +2480,13 @@ section:last-of-type {
 }
 
 .terms-modal-content {
-  background-color: #ffffff; /* White card */
+  background-color: #ffffff;
   margin: 20px;
-  padding: 0; /* Reset padding for header/body split */
+  padding: 0;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   width: 100%;
-  max-width: 550px; /* Slightly wider */
+  max-width: 550px;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(255, 255, 255, 0.1);
   position: relative;
@@ -2556,7 +2526,7 @@ section:last-of-type {
 
 /* Modal Header */
 .modal-header {
-  background: #fafafa; /* Light gray header */
+  background: #fafafa;
   padding: 40px 40px 30px;
   text-align: center;
   border-bottom: 1px solid var(--color-border);
@@ -2609,7 +2579,7 @@ section:last-of-type {
   font-size: 0.95rem;
   color: var(--color-text-secondary);
   user-select: none;
-  align-items: flex-start; /* Align top for multi-line text */
+  align-items: flex-start;
 }
 
 .checkbox-container input {
@@ -2677,9 +2647,8 @@ section:last-of-type {
 /* Button & Security */
 #modal-confirm-btn {
   margin: 0 40px;
-  width: calc(100% - 80px); /* Full width minus padding */
+  width: calc(100% - 80px);
   justify-content: center;
-  /* Fix Mobile/iOS Visibility */
   opacity: 1 !important;
   animation: none !important;
   transform: none !important;
@@ -2701,7 +2670,7 @@ section:last-of-type {
 }
 
 #modal-confirm-btn:not(.disabled) .lock-icon {
-  display: none; /* Hide lock when active */
+  display: none;
 }
 
 .modal-security-text {
@@ -2726,7 +2695,7 @@ section:last-of-type {
   background-color: #000;
   cursor: pointer;
   overflow: hidden;
-  display: block; /* Ensure it takes space */
+  display: block;
 }
 
 .video-thumb {
@@ -2752,7 +2721,7 @@ section:last-of-type {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 70px; /* Base size */
+  width: 70px;
   height: 70px;
   background: rgba(255, 255, 255, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.3);
@@ -2771,7 +2740,7 @@ section:last-of-type {
   width: 24px;
   height: 24px;
   fill: #fff;
-  margin-left: 4px; /* Optical center adjustment */
+  margin-left: 4px;
   transition: all 0.3s ease;
 }
 
@@ -2780,7 +2749,7 @@ section:last-of-type {
   width: 80px;
   height: 80px;
   border-color: var(--color-neon);
-  background: rgba(0, 255, 136, 0.15); /* Green tint */
+  background: rgba(0, 255, 136, 0.15);
   box-shadow: 0 0 30px var(--color-neon);
 }
 
@@ -2821,4 +2790,168 @@ section:last-of-type {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/* ========================================
+   MOBILE PERFORMANCE OPTIMIZATIONS
+   Desabilita efeitos pesados para dispositivos móveis
+   enquanto mantém desktop inalterado.
+   ======================================== */
+@media (max-width: 768px) {
+  /* ═══════════════════════════════════════════
+     DISABLE SCROLL ANIMATIONS ON PILLAR CARDS
+     ═══════════════════════════════════════════ */
+  .pillar-card.animate-on-scroll,
+  .pillar-card {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    transition-delay: 0s !important;
+  }
+
+  /* ═══════════════════════════════════════════
+     DISABLE ALL BLUR FILTERS - CRITICAL
+     ═══════════════════════════════════════════ */
+  .journey::before,
+  .pillars::before,
+  .pillars::after,
+  .method::before,
+  .final-cta::before {
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 0.15 !important;
+  }
+
+  /* ═══════════════════════════════════════════
+     DISABLE BACKDROP-FILTER
+     ═══════════════════════════════════════════ */
+  .terms-modal {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: rgba(0, 0, 0, 0.92) !important;
+  }
+
+  .method-highlight-box {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(6, 95, 70, 0.7) !important;
+  }
+
+  /* ═══════════════════════════════════════════
+     DISABLE TRANSFORMATION BACKGROUNDS
+     ═══════════════════════════════════════════ */
+  .transformation-bg-left,
+  .transformation-bg-right {
+    display: none !important;
+  }
+
+  /* ═══════════════════════════════════════════
+     SIMPLIFY BOX-SHADOWS
+     ═══════════════════════════════════════════ */
+  .card-after {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  .pricing-card.featured {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12) !important;
+  }
+
+  .comparison-card {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .visual-title {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* ═══════════════════════════════════════════
+     DISABLE HOVER TRANSFORMS (Touch devices)
+     ═══════════════════════════════════════════ */
+  .pillar-card:hover,
+  .pricing-card:hover,
+  .comparison-card:hover,
+  .testimonial-card:hover {
+    transform: none !important;
+  }
+
+  .pillar-card:hover .pillar-icon {
+    box-shadow: none !important;
+  }
+
+  .card-after:hover {
+    transform: none !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  .pricing-card.featured:hover {
+    transform: scale(1.05) !important;
+  }
+
+  /* ═══════════════════════════════════════════
+     DISABLE EXPENSIVE ANIMATIONS
+     ═══════════════════════════════════════════ */
+  .portal-arrow {
+    animation: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .play-btn::before {
+    animation: none !important;
+    display: none !important;
+  }
+
+  .cta-button.primary {
+    animation: fadeInUp 0.8s ease 0.4s forwards !important;
+    box-shadow: 0 4px 16px rgba(4, 120, 87, 0.25) !important;
+  }
+
+  .cta-button.primary:hover {
+    box-shadow: 0 4px 16px rgba(4, 120, 87, 0.25) !important;
+  }
+
+  /* ═══════════════════════════════════════════
+     GPU ACCELERATION & LAYER OPTIMIZATION
+     ═══════════════════════════════════════════ */
+  .hero,
+  .journey,
+  .transformation,
+  .method,
+  .pillars,
+  .social-proof,
+  .pricing,
+  .faq,
+  .final-cta {
+    will-change: auto;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  /* ═══════════════════════════════════════════
+     REDUCE TEXT-SHADOW COMPLEXITY
+     ═══════════════════════════════════════════ */
+  .neon-text {
+    text-shadow: 0 0 8px var(--color-neon-glow) !important;
+  }
+
+  .highlight {
+    text-shadow: none !important;
+  }
+
+  /* ═══════════════════════════════════════════
+     OPTIMIZE TRANSITIONS
+     ═══════════════════════════════════════════ */
+  .image-container:hover img {
+    transform: none !important;
+  }
+
+  .video-facade:hover .video-thumb {
+    transform: none !important;
+  }
+
+  .video-facade:hover .play-btn {
+    width: 70px !important;
+    height: 70px !important;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5) !important;
+  }
 }
