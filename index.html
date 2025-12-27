@@ -114,22 +114,36 @@
             overflow: hidden;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
             border: 2px solid #333;
+            aspect-ratio: 16/9;
           "
         >
-          <video
-            width="100%"
-            height="auto"
-            controls
-            autoplay
-            muted
-            loop
-            playsinline
-            poster="public/optimized/Hero-Gustavo-1.webp"
-            style="display: block"
+          <div
+            class="vsl-wrapper"
+            style="
+              border-radius: 20px;
+              overflow: hidden;
+              box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+              border: 2px solid #333;
+            "
           >
-            <source src="public/optimized_videos/hero.mp4" type="video/mp4" />
-            Seu navegador não suporta a tag de vídeo.
-          </video>
+            <video
+              width="100%"
+              height="auto"
+              autoplay
+              loop
+              playsinline
+              poster="public/optimized/Hero-Gustavo-1.webp"
+              style="
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              "
+            >
+              <source src="public/optimized_videos/hero.mp4" type="video/mp4" />
+              Seu navegador não suporta a tag de vídeo.
+            </video>
+          </div>
         </div>
       </div>
 
@@ -430,63 +444,112 @@
                 overflow: hidden;
                 height: 550px;
                 position: relative;
+                display: flex;
+                flex-direction: column;
+                background: #0a0a0a;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
               "
             >
-              <video
-                id="depo-video-1"
-                class="depo-video"
-                src="public/optimized_videos/depo1.mp4"
-                muted
-                loop
-                playsinline
-                style="
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
-                "
-              ></video>
+              <div
+                class="video-container relative"
+                style="width: 100%; flex: 1; position: relative"
+              >
+                <video
+                  src="public/optimized_videos/depo1.mp4"
+                  class="depo-video"
+                  playsinline
+                  preload="none"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                  "
+                ></video>
+                <div
+                  class="video-facade-local"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 10;
+                  "
+                >
+                  <div class="video-facade" style="pointer-events: none">
+                    <div
+                      class="video-thumb"
+                      style="
+                        background-image: url('public/optimized_videos/thumb_depo1.webp');
+                      "
+                    ></div>
+                    <button class="play-btn">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
               <a
                 href="https://www.instagram.com/dierdetails"
                 target="_blank"
-                class="testimonial-overlay"
                 style="
-                  position: absolute;
-                  bottom: 0;
-                  left: 0;
-                  right: 0;
-                  padding: 20px;
-                  background: linear-gradient(
-                    to top,
-                    rgba(0, 0, 0, 0.8),
-                    transparent
-                  );
+                  padding: 16px 20px;
+                  background: #111;
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
                   text-decoration: none;
-                  cursor: pointer;
-                  display: block;
+                  border-top: 1px solid rgba(255, 255, 255, 0.1);
+                  transition: background 0.2s ease;
                 "
+                onmouseover="this.style.background='#1a1a1a'"
+                onmouseout="this.style.background='#111'"
               >
-                <span
+                <div
                   style="
-                    color: white;
-                    font-weight: 700;
                     display: flex;
                     align-items: center;
-                    gap: 8px;
+                    justify-content: center;
+                    width: 32px;
+                    height: 32px;
+                    background: linear-gradient(
+                      45deg,
+                      #f09433 0%,
+                      #e6683c 25%,
+                      #dc2743 50%,
+                      #cc2366 75%,
+                      #bc1888 100%
+                    );
+                    border-radius: 50%;
+                    color: white;
                   "
                 >
                   <svg
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    width="16"
-                    height="16"
+                    width="18"
+                    height="18"
                   >
                     <path
                       d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
                     />
                   </svg>
-                  @dierdetails
-                </span>
+                </div>
+                <span
+                  style="
+                    color: #fff;
+                    font-weight: 600;
+                    font-size: 14px;
+                    letter-spacing: 0.5px;
+                  "
+                  >@dierdetails</span
+                >
               </a>
             </div>
 
@@ -497,64 +560,112 @@
                 overflow: hidden;
                 height: 550px;
                 position: relative;
+                display: flex;
+                flex-direction: column;
+                background: #0a0a0a;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
               "
             >
-              <video
-                id="depo-video-2"
-                class="depo-video"
-                src="public/optimized_videos/depo2.mp4"
-                muted
-                loop
-                playsinline
-                preload="metadata"
-                style="
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
-                "
-              ></video>
+              <div
+                class="video-container relative"
+                style="width: 100%; flex: 1; position: relative"
+              >
+                <video
+                  src="public/optimized_videos/depo2.mp4"
+                  class="depo-video"
+                  playsinline
+                  preload="none"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                  "
+                ></video>
+                <div
+                  class="video-facade-local"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 10;
+                  "
+                >
+                  <div class="video-facade" style="pointer-events: none">
+                    <div
+                      class="video-thumb"
+                      style="
+                        background-image: url('public/optimized_videos/thumb_depo2.webp');
+                      "
+                    ></div>
+                    <button class="play-btn">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
               <a
                 href="https://www.instagram.com/sergio_estetica_automotiva"
                 target="_blank"
-                class="testimonial-overlay"
                 style="
-                  position: absolute;
-                  bottom: 0;
-                  left: 0;
-                  right: 0;
-                  padding: 20px;
-                  background: linear-gradient(
-                    to top,
-                    rgba(0, 0, 0, 0.8),
-                    transparent
-                  );
+                  padding: 16px 20px;
+                  background: #111;
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
                   text-decoration: none;
-                  cursor: pointer;
-                  display: block;
+                  border-top: 1px solid rgba(255, 255, 255, 0.1);
+                  transition: background 0.2s ease;
                 "
+                onmouseover="this.style.background='#1a1a1a'"
+                onmouseout="this.style.background='#111'"
               >
-                <span
+                <div
                   style="
-                    color: white;
-                    font-weight: 700;
                     display: flex;
                     align-items: center;
-                    gap: 8px;
+                    justify-content: center;
+                    width: 32px;
+                    height: 32px;
+                    background: linear-gradient(
+                      45deg,
+                      #f09433 0%,
+                      #e6683c 25%,
+                      #dc2743 50%,
+                      #cc2366 75%,
+                      #bc1888 100%
+                    );
+                    border-radius: 50%;
+                    color: white;
                   "
                 >
                   <svg
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    width="16"
-                    height="16"
+                    width="18"
+                    height="18"
                   >
                     <path
                       d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
                     />
                   </svg>
-                  @sergio_estetica_automotiva
-                </span>
+                </div>
+                <span
+                  style="
+                    color: #fff;
+                    font-weight: 600;
+                    font-size: 14px;
+                    letter-spacing: 0.5px;
+                  "
+                  >@sergio_estetica_automotiva</span
+                >
               </a>
             </div>
 
@@ -565,64 +676,112 @@
                 overflow: hidden;
                 height: 550px;
                 position: relative;
+                display: flex;
+                flex-direction: column;
+                background: #0a0a0a;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
               "
             >
-              <video
-                id="depo-video-3"
-                class="depo-video"
-                src="public/optimized_videos/depo3.mp4"
-                muted
-                loop
-                playsinline
-                preload="metadata"
-                style="
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
-                "
-              ></video>
+              <div
+                class="video-container relative"
+                style="width: 100%; flex: 1; position: relative"
+              >
+                <video
+                  src="public/optimized_videos/depo3.mp4"
+                  class="depo-video"
+                  playsinline
+                  preload="none"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                  "
+                ></video>
+                <div
+                  class="video-facade-local"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 10;
+                  "
+                >
+                  <div class="video-facade" style="pointer-events: none">
+                    <div
+                      class="video-thumb"
+                      style="
+                        background-image: url('public/optimized_videos/thumb_depo3.webp');
+                      "
+                    ></div>
+                    <button class="play-btn">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
               <a
                 href="https://www.instagram.com/lince.studiocar"
                 target="_blank"
-                class="testimonial-overlay"
                 style="
-                  position: absolute;
-                  bottom: 0;
-                  left: 0;
-                  right: 0;
-                  padding: 20px;
-                  background: linear-gradient(
-                    to top,
-                    rgba(0, 0, 0, 0.8),
-                    transparent
-                  );
+                  padding: 16px 20px;
+                  background: #111;
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
                   text-decoration: none;
-                  cursor: pointer;
-                  display: block;
+                  border-top: 1px solid rgba(255, 255, 255, 0.1);
+                  transition: background 0.2s ease;
                 "
+                onmouseover="this.style.background='#1a1a1a'"
+                onmouseout="this.style.background='#111'"
               >
-                <span
+                <div
                   style="
-                    color: white;
-                    font-weight: 700;
                     display: flex;
                     align-items: center;
-                    gap: 8px;
+                    justify-content: center;
+                    width: 32px;
+                    height: 32px;
+                    background: linear-gradient(
+                      45deg,
+                      #f09433 0%,
+                      #e6683c 25%,
+                      #dc2743 50%,
+                      #cc2366 75%,
+                      #bc1888 100%
+                    );
+                    border-radius: 50%;
+                    color: white;
                   "
                 >
                   <svg
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    width="16"
-                    height="16"
+                    width="18"
+                    height="18"
                   >
                     <path
                       d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
                     />
                   </svg>
-                  @lince.studiocar
-                </span>
+                </div>
+                <span
+                  style="
+                    color: #fff;
+                    font-weight: 600;
+                    font-size: 14px;
+                    letter-spacing: 0.5px;
+                  "
+                  >@lince.studiocar</span
+                >
               </a>
             </div>
 
@@ -633,64 +792,112 @@
                 overflow: hidden;
                 height: 550px;
                 position: relative;
+                display: flex;
+                flex-direction: column;
+                background: #0a0a0a;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
               "
             >
-              <video
-                id="depo-video-4"
-                class="depo-video"
-                src="public/optimized_videos/depo4.mp4"
-                muted
-                loop
-                playsinline
-                preload="metadata"
-                style="
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
-                "
-              ></video>
+              <div
+                class="video-container relative"
+                style="width: 100%; flex: 1; position: relative"
+              >
+                <video
+                  src="public/optimized_videos/depo4.mp4"
+                  class="depo-video"
+                  playsinline
+                  preload="none"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                  "
+                ></video>
+                <div
+                  class="video-facade-local"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 10;
+                  "
+                >
+                  <div class="video-facade" style="pointer-events: none">
+                    <div
+                      class="video-thumb"
+                      style="
+                        background-image: url('public/optimized_videos/thumb_depo4.webp');
+                      "
+                    ></div>
+                    <button class="play-btn">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
               <a
                 href="https://www.instagram.com/juras_insulfilmcacoal"
                 target="_blank"
-                class="testimonial-overlay"
                 style="
-                  position: absolute;
-                  bottom: 0;
-                  left: 0;
-                  right: 0;
-                  padding: 20px;
-                  background: linear-gradient(
-                    to top,
-                    rgba(0, 0, 0, 0.8),
-                    transparent
-                  );
+                  padding: 16px 20px;
+                  background: #111;
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
                   text-decoration: none;
-                  cursor: pointer;
-                  display: block;
+                  border-top: 1px solid rgba(255, 255, 255, 0.1);
+                  transition: background 0.2s ease;
                 "
+                onmouseover="this.style.background='#1a1a1a'"
+                onmouseout="this.style.background='#111'"
               >
-                <span
+                <div
                   style="
-                    color: white;
-                    font-weight: 700;
                     display: flex;
                     align-items: center;
-                    gap: 8px;
+                    justify-content: center;
+                    width: 32px;
+                    height: 32px;
+                    background: linear-gradient(
+                      45deg,
+                      #f09433 0%,
+                      #e6683c 25%,
+                      #dc2743 50%,
+                      #cc2366 75%,
+                      #bc1888 100%
+                    );
+                    border-radius: 50%;
+                    color: white;
                   "
                 >
                   <svg
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    width="16"
-                    height="16"
+                    width="18"
+                    height="18"
                   >
                     <path
                       d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
                     />
                   </svg>
-                  @juras_insulfilmcacoal
-                </span>
+                </div>
+                <span
+                  style="
+                    color: #fff;
+                    font-weight: 600;
+                    font-size: 14px;
+                    letter-spacing: 0.5px;
+                  "
+                  >@juras_insulfilmcacoal</span
+                >
               </a>
             </div>
 
@@ -701,64 +908,227 @@
                 overflow: hidden;
                 height: 550px;
                 position: relative;
+                display: flex;
+                flex-direction: column;
+                background: #0a0a0a;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
               "
             >
-              <video
-                id="depo-video-5"
-                class="depo-video"
-                src="public/optimized_videos/depo5.mp4"
-                muted
-                loop
-                playsinline
-                preload="metadata"
-                style="
-                  width: 100%;
-                  height: 100%;
-                  object-fit: cover;
-                  cursor: pointer;
-                "
-              ></video>
+              <div
+                class="video-container relative"
+                style="width: 100%; flex: 1; position: relative"
+              >
+                <video
+                  src="public/optimized_videos/depo5.mp4"
+                  class="depo-video"
+                  playsinline
+                  preload="none"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                  "
+                ></video>
+                <div
+                  class="video-facade-local"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 10;
+                  "
+                >
+                  <div class="video-facade" style="pointer-events: none">
+                    <div
+                      class="video-thumb"
+                      style="
+                        background-image: url('public/optimized_videos/thumb_depo5.webp');
+                      "
+                    ></div>
+                    <button class="play-btn">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
               <a
                 href="https://www.instagram.com/detailingcarpso"
                 target="_blank"
-                class="testimonial-overlay"
                 style="
-                  position: absolute;
-                  bottom: 0;
-                  left: 0;
-                  right: 0;
-                  padding: 20px;
-                  background: linear-gradient(
-                    to top,
-                    rgba(0, 0, 0, 0.8),
-                    transparent
-                  );
+                  padding: 16px 20px;
+                  background: #111;
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
                   text-decoration: none;
-                  cursor: pointer;
-                  display: block;
+                  border-top: 1px solid rgba(255, 255, 255, 0.1);
+                  transition: background 0.2s ease;
                 "
+                onmouseover="this.style.background='#1a1a1a'"
+                onmouseout="this.style.background='#111'"
               >
-                <span
+                <div
                   style="
-                    color: white;
-                    font-weight: 700;
                     display: flex;
                     align-items: center;
-                    gap: 8px;
+                    justify-content: center;
+                    width: 32px;
+                    height: 32px;
+                    background: linear-gradient(
+                      45deg,
+                      #f09433 0%,
+                      #e6683c 25%,
+                      #dc2743 50%,
+                      #cc2366 75%,
+                      #bc1888 100%
+                    );
+                    border-radius: 50%;
+                    color: white;
                   "
                 >
                   <svg
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    width="16"
-                    height="16"
+                    width="18"
+                    height="18"
                   >
                     <path
                       d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
                     />
                   </svg>
-                  @detailingcarpso
-                </span>
+                </div>
+                <span
+                  style="
+                    color: #fff;
+                    font-weight: 600;
+                    font-size: 14px;
+                    letter-spacing: 0.5px;
+                  "
+                  >@detailingcarpso</span
+                >
+              </a>
+            </div>
+
+            <div
+              class="testimonial-card"
+              style="
+                padding: 0;
+                overflow: hidden;
+                height: 550px;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                background: #0a0a0a;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+              "
+            >
+              <div
+                class="video-container relative"
+                style="width: 100%; flex: 1; position: relative"
+              >
+                <video
+                  src="public/optimized_videos/depo6.mp4"
+                  class="depo-video"
+                  playsinline
+                  preload="none"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                  "
+                ></video>
+                <div
+                  class="video-facade-local"
+                  style="
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 10;
+                  "
+                >
+                  <div class="video-facade" style="pointer-events: none">
+                    <div
+                      class="video-thumb"
+                      style="
+                        background-image: url('public/optimized_videos/thumb_depo6.webp');
+                      "
+                    ></div>
+                    <button class="play-btn">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <a
+                href="https://www.instagram.com/evoconceptofc"
+                target="_blank"
+                style="
+                  padding: 16px 20px;
+                  background: #111;
+                  display: flex;
+                  align-items: center;
+                  gap: 12px;
+                  text-decoration: none;
+                  border-top: 1px solid rgba(255, 255, 255, 0.1);
+                  transition: background 0.2s ease;
+                "
+                onmouseover="this.style.background='#1a1a1a'"
+                onmouseout="this.style.background='#111'"
+              >
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 32px;
+                    height: 32px;
+                    background: linear-gradient(
+                      45deg,
+                      #f09433 0%,
+                      #e6683c 25%,
+                      #dc2743 50%,
+                      #cc2366 75%,
+                      #bc1888 100%
+                    );
+                    border-radius: 50%;
+                    color: white;
+                  "
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    width="18"
+                    height="18"
+                  >
+                    <path
+                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                    />
+                </div>
+                <span
+                  style="
+                    color: #fff;
+                    font-weight: 600;
+                    font-size: 14px;
+                    letter-spacing: 0.5px;
+                  "
+                  >@evoconceptofc</span
+                >
               </a>
             </div>
           </div>
@@ -1442,121 +1812,184 @@
 
           // For checkout buttons, add brief loading state
           if (this.dataset.checkout) {
+            // Save original text if not already saved
+            if (!this.dataset.originalText) {
+              this.dataset.originalText = this.innerHTML;
+            }
+
             this.classList.add("loading");
             this.innerHTML = "<span>Carregando...</span>";
 
-            // Reset after 2 seconds if no redirect happened
+            // Reset after 3 seconds or handle pageshow (back button)
             setTimeout(() => {
               this.classList.remove("loading");
-              this.innerHTML = "COMPRAR AGORA";
-            }, 2000);
+              // Restore original text
+              if (this.dataset.originalText) {
+                this.innerHTML = this.dataset.originalText;
+              }
+            }, 3000);
           }
         });
       });
 
-      /**
-       * Audio Fade-In Logic
-       * Attempts to play video unmuted with volume fading in.
-       * Note: Browsers usually block unmuted autoplay without user interaction.
-       */
-      function playWithFadeIn(video) {
-        video.volume = 0;
-        video.muted = false;
+      // Handle Back Button (bfcache) to reset buttons
+      window.addEventListener("pageshow", function (event) {
+        document.querySelectorAll(".pricing-cta.loading").forEach((btn) => {
+          btn.classList.remove("loading");
+          if (btn.dataset.originalText) {
+            btn.innerHTML = btn.dataset.originalText;
+          }
+        });
+      });
 
-        var playPromise = video.play();
-
-        if (playPromise !== undefined) {
-          playPromise
-            .then((_) => {
-              // Autoplay started! Fade in volume
-              let vol = 0;
-              const interval = 100; // 100ms steps
-              const step = 0.1; // 10% increase
-
-              const fadeAudio = setInterval(function () {
-                if (vol < 1.0) {
-                  vol += step;
-                  if (vol > 1.0) vol = 1.0;
-                  video.volume = vol;
-                } else {
-                  clearInterval(fadeAudio);
-                }
-              }, interval);
-            })
-            .catch((error) => {
-              // Auto-play was prevented.
-              // Fallback to muted autoplay
-              console.log("Autoplay with sound blocked. Fallback to muted.");
-              video.muted = true;
-              video.play();
-            });
-        }
-      }
-
-      // Initialize Video Logic for Grid
+      // Initialize Video Facade Logic
       document.addEventListener("DOMContentLoaded", () => {
-        // Hero Video Reference
+        // --- HERO LOCAL VIDEO LOGIC ---
         const heroVideo = document.querySelector(".vsl-wrapper video");
+        if (heroVideo) {
+          // Initialize with 0 volume to prepare for fade
+          heroVideo.volume = 0;
 
-        // Helper to pause ALL videos except the current one
-        function pauseAllVideos(currentVideo) {
-          // Pause Hero
-          if (heroVideo && heroVideo !== currentVideo && !heroVideo.paused) {
-            heroVideo.pause();
+          // Attempt to play unmuted logic
+          const playPromise = heroVideo.play();
+
+          if (playPromise !== undefined) {
+            playPromise
+              .then((_) => {
+                // Autoplay started!
+                // Try to unmute (might fail if no user interaction despite autoplay success, but usually linked)
+                heroVideo.muted = false;
+
+                // Fade In Logic (0 to 1 over ~2000ms)
+                let vol = 0;
+                const fadeInterval = setInterval(() => {
+                  if (vol < 1.0) {
+                    vol += 0.05;
+                    if (vol > 1.0) vol = 1.0;
+                    heroVideo.volume = vol;
+                  } else {
+                    clearInterval(fadeInterval);
+                  }
+                }, 100);
+              })
+              .catch((error) => {
+                // Autoplay prevented (likely due to unmuted)
+                console.log(
+                  "Unmuted autoplay prevented. Falling back to muted."
+                );
+                heroVideo.muted = true;
+                heroVideo.play();
+              });
           }
 
-          // Pause all Testimonials
-          document.querySelectorAll(".depo-video").forEach((video) => {
-            if (video !== currentVideo && !video.paused) {
-              video.pause();
+          heroVideo.addEventListener("click", function (e) {
+            e.preventDefault();
+            if (this.paused) {
+              this.play();
+            } else {
+              this.pause();
+            }
+          });
+          // Ensure cursor pointer to indicate interactability
+          heroVideo.style.cursor = "pointer";
+        }
+
+        // --- YOUTUBE FACADE LOGIC ---
+        const facades = document.querySelectorAll(
+          ".video-facade:not(.video-facade-local .video-facade)"
+        );
+        // Only select facades that are NOT inside a local wrapper (if any left)
+
+        facades.forEach((facade) => {
+          facade.addEventListener("click", function () {
+            if (this.classList.contains("playing")) return;
+
+            const videoId = this.dataset.videoId;
+            // ... (rest of YouTube logic if needed) ...
+          });
+        });
+
+        // Create a master list of all videos (Hero + Testimonials)
+        const allVideos = document.querySelectorAll("video");
+
+        function pauseAllOthers(currentVideo) {
+          allVideos.forEach((v) => {
+            if (v !== currentVideo && !v.paused) {
+              v.pause();
             }
           });
         }
 
-        // Hero Video Fade In
-        if (heroVideo) {
-          setTimeout(() => playWithFadeIn(heroVideo), 500);
-        }
+        // Mobile Detection
+        const isMobile =
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+          );
 
-        // Global Video Interaction Handler (Click to Toggle)
-        document.querySelectorAll(".depo-video").forEach((video) => {
-          video.addEventListener("click", function (e) {
-            e.preventDefault();
-            if (video.paused) {
-              // Exclusive Playback: Pause everyone else first
-              pauseAllVideos(video);
-              playWithFadeIn(video);
-            } else {
-              video.pause();
+        allVideos.forEach((video) => {
+          // Concurrency Logic: When any video plays, pause others
+          video.addEventListener("play", function () {
+            pauseAllOthers(this);
+
+            // MOBILE ONLY: Auto Fullscreen logic
+            if (isMobile) {
+              if (video.requestFullscreen) {
+                video.requestFullscreen();
+              } else if (video.webkitEnterFullscreen) {
+                video.webkitEnterFullscreen(); // iOS Safari
+              } else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+              }
             }
           });
         });
 
-        // Smart Video Observer for Testimonials
-        const videoObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              const video = entry.target;
+        // Listen for Fullscreen Exit to Pause Video
+        function onFullscreenChange() {
+          const fullscreenElement =
+            document.fullscreenElement ||
+            document.webkitFullscreenElement ||
+            document.mozFullScreenElement ||
+            document.msFullscreenElement;
 
-              if (entry.isIntersecting) {
-                // ONLY play the first video automatically when it becomes visible
-                if (video.id === "depo-video-1" && video.paused) {
-                  // Exclusive Playback: Pause everyone else first
-                  pauseAllVideos(video);
-                  playWithFadeIn(video);
-                }
-              } else {
-                // Video left viewport: Pause and Mute
+          // If strictly exiting fullscreen (element is null)
+          if (!fullscreenElement) {
+            allVideos.forEach((video) => {
+              // If video is playing and not the hero (optional, but usually good for all), pause it
+              if (!video.paused) {
                 video.pause();
-                video.muted = true;
               }
             });
-          },
-          { threshold: 0.6 }
-        ); // Trigger when 60% visible
+          }
+        }
 
-        document.querySelectorAll(".depo-video").forEach((video) => {
-          videoObserver.observe(video);
+        document.addEventListener("fullscreenchange", onFullscreenChange);
+        document.addEventListener("webkitfullscreenchange", onFullscreenChange);
+        document.addEventListener("mozfullscreenchange", onFullscreenChange);
+        document.addEventListener("MSFullscreenChange", onFullscreenChange);
+
+        // --- LOCAL VIDEO FACADE INTERACTION ---
+        const localFacadeWrappers = document.querySelectorAll(
+          ".video-facade-local"
+        );
+
+        localFacadeWrappers.forEach((wrapper) => {
+          wrapper.addEventListener("click", function () {
+            const video = this.previousElementSibling; // The <video> tag
+            if (!video) return;
+
+            // 1. Hide the facade
+            this.style.opacity = "0";
+            this.style.pointerEvents = "none";
+
+            // 2. Play the video
+            video
+              .play()
+              .then(() => {
+                video.setAttribute("controls", "true");
+              })
+              .catch((e) => console.log("Playback failed:", e));
+          });
         });
       });
 
