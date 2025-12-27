@@ -33,6 +33,59 @@
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-xl: 30px;
+
+  /* ========================================
+     🎯 PAINEL DE CONTROLE - POSIÇÃO DAS IMAGENS
+     ========================================
+     
+     Ajuste os valores abaixo para mudar o enquadramento
+     das imagens ANTES, DEPOIS e METODOLOGIA.
+     
+     Use PORCENTAGEM (0% a 100%):
+     - HORIZONTAL: 0% = esquerda, 50% = centro, 100% = direita
+     - VERTICAL: 0% = topo, 50% = centro, 100% = base
+     
+     Exemplo: 50% 30% = centro horizontal, mais perto do topo
+     
+     ======================================== */
+
+  /* ═══════════════════════════════════════════
+     � CARDS ANTES/DEPOIS
+     ═══════════════════════════════════════════ */
+
+  /* �🖥️ DESKTOP (telas >= 768px) */
+  --antes-desktop-x: 20%;
+  --antes-desktop-y: 0%;
+  --depois-desktop-x: 0%;
+  --depois-desktop-y: 62%;
+
+  /* 📱 MOBILE GRANDE (telas 401px - 767px) */
+  --antes-mobile-lg-x: 50%;
+  --antes-mobile-lg-y: 20%;
+  --depois-mobile-lg-x: 50%;
+  --depois-mobile-lg-y: 58%;
+
+  /* 📱 MOBILE PEQUENO (telas <= 400px) */
+  --antes-mobile-sm-x: 50%;
+  --antes-mobile-sm-y: 20%;
+  --depois-mobile-sm-x: 50%;
+  --depois-mobile-sm-y: 58%;
+
+  /* ═══════════════════════════════════════════
+     🏎️ SEÇÃO METODOLOGIA (O MÉTODO)
+     ═══════════════════════════════════════════ */
+
+  /* 🖥️ DESKTOP (telas >= 768px) */
+  --metodo-desktop-x: 50%;
+  --metodo-desktop-y: 45%;
+
+  /* 📱 MOBILE GRANDE (telas 401px - 767px) */
+  --metodo-mobile-lg-x: 40%;
+  --metodo-mobile-lg-y: 45%;
+
+  /* 📱 MOBILE PEQUENO (telas <= 400px) */
+  --metodo-mobile-sm-x: 50%;
+  --metodo-mobile-sm-y: 55%;
 }
 
 *,
@@ -46,6 +99,7 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  overflow-x: hidden; /* Prevent horizontal scroll globally */
 }
 
 body {
@@ -60,7 +114,9 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Double reinforcement */
+  width: 100%;
+  max-width: 100vw; /* Never exceed viewport */
 }
 
 a {
@@ -85,6 +141,196 @@ button {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 var(--container-padding);
+}
+
+/* ========================================
+   GLOBAL MOBILE CENTERING FIX
+======================================== */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Comparison Cards (ANTES/DEPOIS) - FIX: Reset max-width */
+  .comparison-grid {
+    padding: 0 !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 100% !important; /* ← KEY FIX: Remove 900px limit */
+  }
+
+  .comparison-card {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .card-image {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .card-image img {
+    width: 100% !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  /* Method Section - FIX: Hide the decorative flare that overflows */
+  .method::before {
+    display: none !important; /* ← KEY FIX: Remove overflowing pseudo-element */
+  }
+
+  .method-content {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    gap: 40px !important; /* Reduce gap to prevent overflow */
+  }
+
+  .method-text {
+    width: 100% !important;
+    padding: 0 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .method-header {
+    max-width: 100% !important;
+  }
+
+  .method-text p,
+  .method-lead,
+  .method-emphasis {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+
+  .method-highlight-box {
+    width: 100% !important;
+    margin: 0 !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .method-highlight-box p {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+
+  .image-container {
+    width: 100% !important;
+    margin: 0 auto !important;
+  }
+
+  .image-container img {
+    width: 100% !important;
+    margin: 0 auto !important;
+    transform: none !important;
+  }
+}
+
+/* ========================================
+   EXTRA SMALL SCREENS (< 400px) - iPhone SE, older phones
+======================================== */
+@media (max-width: 400px) {
+  .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  /* Reduce font sizes to prevent overflow */
+  .hero-headline {
+    font-size: 1.75rem !important;
+  }
+
+  .method-title,
+  .visual-title,
+  .pillars-title,
+  .social-title,
+  .pricing-title {
+    font-size: 1.5rem !important;
+  }
+
+  .method-emphasis {
+    font-size: 1.25rem !important;
+  }
+
+  .stat-value.success {
+    font-size: 2.5rem !important;
+  }
+
+  /* Cards - tighter padding */
+  .card-stats {
+    padding: 20px 16px !important;
+  }
+
+  .method-highlight-box {
+    padding: 16px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .highlight-icon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  /* Pricing cards */
+  .pricing-card {
+    padding: 24px 16px !important;
+  }
+
+  .pricing-cta {
+    padding: 14px 20px !important;
+    font-size: 0.875rem !important;
+  }
+
+  /* Method Section - small screens fix */
+  .method-visual {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .method-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    border-radius: 8px !important;
+  }
+
+  .method-image img,
+  .image-container img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+
+  /* Card Image - altura mais compacta em telas críticas */
+  .card-image {
+    height: clamp(180px, 50vw, 240px) !important;
+  }
+
+  .method-content {
+    gap: 20px !important;
+  }
+
+  .method-text p {
+    font-size: 0.9rem !important;
+  }
+
+  .method-lead {
+    font-size: 1rem !important;
+  }
 }
 
 /* Section Tag */
@@ -120,27 +366,13 @@ button {
   opacity: 0.5;
 }
 
-/* ========================================
-   HERO SECTION
-   
-   ★ AJUSTES DO BACKGROUND ★
-   Edite as variáveis abaixo para ajustar a imagem de fundo
-======================================== */
+/* HERO SECTION */
 .hero {
-  /* ===== IMAGEM DE FUNDO - AJUSTE AQUI ===== */
   --hero-bg-image: url("../../public/optimized/Hero-Gustavo-1.webp");
-
-  /* POSIÇÃO: left, center, right | top, center, bottom */
   --hero-bg-position-x: center;
   --hero-bg-position-y: center;
-
-  /* ZOOM: cover = preenche tudo, contain = mostra tudo, ou valor como 120% */
   --hero-bg-size: cover;
-
-  /* ESCURECIMENTO: 0 = sem, 0.5 = médio, 0.8 = bem escuro 
-       Aumentado para garantir leitura do texto branco sobre imagem no tema claro */
   --hero-overlay-opacity: 0.7;
-  /* ========================================= */
 
   min-height: 100vh;
   display: flex;
@@ -159,10 +391,7 @@ button {
   border-bottom: 4px solid var(--color-neon);
 }
 
-/* ========================================
-   MOBILE HERO REDESIGN (Max-Width: 968px)
-   Theme: Gray, Green, Gold - Elegant & Visual
-======================================== */
+/* MOBILE HERO REDESIGN (Max-Width: 968px) */
 @media (max-width: 968px) {
   .hero {
     /* Remove Background Image on Mobile */
@@ -219,6 +448,8 @@ button {
 /* Regra Geral para Separadores de Seção */
 section {
   border-bottom: 4px solid var(--color-neon);
+  overflow: hidden; /* Prevent any section from causing horizontal scroll */
+  max-width: 100vw; /* Never exceed viewport */
 }
 
 /* Remove a borda da última seção (opcional, mas esteticamente melhor) */
@@ -564,7 +795,13 @@ section:last-of-type {
   opacity: 0.6;
   z-index: 0;
   pointer-events: none;
-  filter: blur(150px); /* Increased blur */
+  filter: blur(150px);
+}
+
+@media (max-width: 768px) {
+  .journey::before {
+    display: none; /* Disable heavy flare on mobile */
+  }
 }
 
 .journey-content.centered {
@@ -626,7 +863,7 @@ section:last-of-type {
   position: relative;
   padding: var(--section-padding) 0;
   overflow: hidden;
-  min-height: 650px;
+  min-height: auto; /* Removido 650px para evitar quebras */
 }
 
 .transformation-bg-left,
@@ -658,6 +895,15 @@ section:last-of-type {
   );
 }
 
+@media (max-width: 768px) {
+  .transformation-bg-left {
+    filter: brightness(0.8);
+    -webkit-mask-image: none;
+    mask-image: none;
+    opacity: 0.3;
+  }
+}
+
 .transformation-bg-left::after {
   content: "";
   position: absolute;
@@ -680,6 +926,15 @@ section:last-of-type {
     rgba(0, 0, 0, 1) 50%,
     rgba(0, 0, 0, 0) 100%
   );
+}
+
+@media (max-width: 768px) {
+  .transformation-bg-right {
+    filter: brightness(1.15); /* Remove blur on mobile */
+    -webkit-mask-image: none;
+    mask-image: none;
+    opacity: 0.3;
+  }
 }
 
 .transformation-bg-right::after {
@@ -792,15 +1047,15 @@ section:last-of-type {
   box-shadow: 0 4px 12px rgba(4, 120, 87, 0.4);
 }
 
-/* Card Image - LARGURA TOTAL e MAIOR */
+/* Card Image */
 .card-image {
   width: 100%;
-  height: 320px; /* Aumentado para 320px como solicitado */
+  height: clamp(200px, 45vw, 320px);
   position: relative;
   border-radius: 0;
   margin: 0;
   flex-shrink: 0;
-  background: #000; /* Previne buracos */
+  background: #000;
   overflow: hidden;
 }
 
@@ -808,8 +1063,9 @@ section:last-of-type {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
-  transition: transform 0.3s ease-out;
+  transition: object-position 0.3s ease-out;
 }
 
 /* ANTES */
@@ -823,16 +1079,59 @@ section:last-of-type {
 
 .card-before .card-image img {
   filter: grayscale(0.8) contrast(0.9);
+  object-position: var(--antes-desktop-x) var(--antes-desktop-y);
 }
 
-/* DEPOIS - Configuração com variáveis para controle */
+/* DEPOIS */
 .card-after .card-image img {
   filter: contrast(1.1) saturate(1.1);
-  /* Controle via variáveis CSS inline no HTML */
-  transform: scale(var(--zoom, 1)) translate(var(--x, 0), var(--y, 0));
+  object-position: var(--depois-desktop-x) var(--depois-desktop-y);
 }
 
-/* Card Stats - COM PADDING AUMENTADO */
+/* Mobile Grande (401px - 767px) */
+@media (max-width: 767px) and (min-width: 401px) {
+  .card-before .card-image img {
+    object-position: var(--antes-mobile-lg-x) var(--antes-mobile-lg-y) !important;
+  }
+  .card-after .card-image img {
+    object-position: var(--depois-mobile-lg-x) var(--depois-mobile-lg-y) !important;
+  }
+}
+
+/* Mobile Pequeno (<= 400px) */
+@media (max-width: 400px) {
+  .card-before .card-image img {
+    object-position: var(--antes-mobile-sm-x) var(--antes-mobile-sm-y) !important;
+  }
+  .card-after .card-image img {
+    object-position: var(--depois-mobile-sm-x) var(--depois-mobile-sm-y) !important;
+  }
+}
+
+/* Seção Metodologia */
+.image-container.method-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: object-position 0.3s ease-out;
+  object-position: var(--metodo-desktop-x) var(--metodo-desktop-y) !important;
+}
+
+/* Mobile Grande */
+@media (max-width: 767px) and (min-width: 401px) {
+  .image-container.method-image img {
+    object-position: var(--metodo-mobile-lg-x) var(--metodo-mobile-lg-y) !important;
+  }
+}
+
+/* Mobile Pequeno */
+@media (max-width: 400px) {
+  .image-container.method-image img {
+    object-position: var(--metodo-mobile-sm-x) var(--metodo-mobile-sm-y) !important;
+  }
+}
+
+/* Card Stats */
 .card-stats {
   padding: 32px 24px;
   text-align: center;
@@ -846,18 +1145,16 @@ section:last-of-type {
   z-index: 2;
 }
 
-/* ANTES */
 .stat-value {
-  font-size: 2.5rem; /* Aumentado */
+  font-size: 2.5rem;
   font-weight: 800;
   color: #52525b;
   margin-bottom: 8px;
   line-height: 1;
 }
 
-/* DEPOIS */
 .stat-value.success {
-  font-size: 3.5rem; /* GIGANTE */
+  font-size: 3.5rem;
   font-weight: 900;
   color: var(--color-neon);
   text-shadow: none;
@@ -1120,6 +1417,8 @@ section:last-of-type {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  /* Ponto focal customizável via variável CSS inline */
+  object-position: var(--focus-x, center) var(--focus-y, center);
   transition: var(--transition-base);
 }
 
@@ -1141,7 +1440,7 @@ section:last-of-type {
 
 .image-container.method-image {
   aspect-ratio: 4/3;
-  min-height: 300px;
+  min-height: unset; /* Remove conflito com aspect-ratio */
   border: 1px solid var(--color-border);
 }
 
@@ -1240,7 +1539,7 @@ section:last-of-type {
 .method-content {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 60px;
+  gap: clamp(24px, 8vw, 60px); /* Fluidez entre mobile e desktop */
   align-items: center;
 }
 
@@ -1296,9 +1595,38 @@ section:last-of-type {
   color: #f1f5f9;
 }
 
+.method-visual {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
 .method-image {
   aspect-ratio: 4/3;
-  min-height: 300px;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .method-visual {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    text-align: center; /* Helper for inline-block content */
+  }
+  .method-image {
+    display: block !important;
+    aspect-ratio: 1; /* Keep square */
+    min-height: auto;
+    margin: 0 auto !important; /* Center if width < 100% */
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important; /* Remove any translation animations */
+  }
 }
 
 /* ========================================
