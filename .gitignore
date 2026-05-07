@@ -125,3 +125,6 @@ Desktop.ini
 
 # Vite build output
 dist/
+
+# Claude Code local config
+.claude/
